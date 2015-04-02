@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Restauration</string>
+    <string name="title_section3">Boissons</string>
+    <string name="title_section2">Composition</string>
+    <string name="title_section1">Accueil</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_section4">Garçon !</string>
+    <string name="title_section5">Panier</string>
+
+</resources>
