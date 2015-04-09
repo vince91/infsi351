@@ -21,11 +21,8 @@ public class FragmentComposition extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		// Create a new TextView and set its text to the fragment's section
-		// number argument value.
-		TextView textView = new TextView(getActivity());
-		textView.setGravity(Gravity.CENTER);
-		textView.setText("Composition");
-		return textView;
+
+		
+		return inflater.inflate(R.layout.composition_layout, container, false);
 	}
 }
