@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class FragmentComposition2 extends Fragment {
@@ -24,8 +25,13 @@ public class FragmentComposition2 extends Fragment {
 			Bundle savedInstanceState) {
 
 		View view = inflater.inflate(R.layout.composition_layout2, container, false);
-//		TextView textView = (TextView) view.findViewById(R.id.textView1);
-//		textView.setText(base);
+		
+		 final Button button_retour = (Button) view.findViewById(R.id.buttonRevenirBase);
+         button_retour.setOnClickListener(new View.OnClickListener() {
+             public void onClick(View v) {
+            	 ((MainActivity) getActivity()).backToComposition1();
+             }
+         });
 		
 		return view;
 	}

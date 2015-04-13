@@ -23,5 +23,7 @@
     <string name="mozzarella">Mozzarella</string>
     <string name="emmental">Emmental</string>
     <string name="chevre">Chèvre</string>
+    <string name="bouton_confirmer">Commander la pizza &gt;</string>
+    <string name="bouton_revenir_base">&lt; Changer la base</string>
 
 </resources>

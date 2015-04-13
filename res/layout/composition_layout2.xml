@@ -3,7 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center_horizontal" >
+    android:gravity="center" >
 
     <TextView
         android:id="@+id/choix_garniture"
@@ -15,7 +15,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="fill_parent" >
+        android:layout_height="wrap_content" 
+       	android:gravity="center">
 
         <GridLayout
             android:layout_width="wrap_content"
@@ -26,7 +27,7 @@
             <ToggleButton
                 android:id="@+id/buttonJambon"
                 android:layout_column="1"
-                android:layout_gravity="right"
+                android:width = "100dp"
                 android:layout_row="1"
                 android:textOn="@string/jambon"
                 android:textOff="@string/jambon" />
@@ -41,6 +42,7 @@
 
             <ToggleButton
                 android:id="@+id/viande1"
+                android:width = "100dp"
                 android:layout_width="match_parent"
                 android:layout_column="0"
                 android:layout_gravity="center"
@@ -50,6 +52,7 @@
 
             <ToggleButton
                 android:id="@+id/toggleButton4"
+                android:width = "100dp"
                 android:layout_column="2"
                 android:layout_gravity="right"
                 android:layout_row="1"
@@ -57,6 +60,7 @@
 
             <ToggleButton
                 android:id="@+id/toggleButton3"
+                android:width = "100dp"
                 android:layout_column="0"
                 android:layout_gravity="left"
                 android:layout_row="2"
@@ -65,6 +69,7 @@
 
             <ToggleButton
                 android:id="@+id/toggleButton2"
+                android:width = "100dp"
                 android:layout_column="1"
                 android:layout_gravity="left"
                 android:layout_row="2"
@@ -82,6 +87,7 @@
 
             <ToggleButton
                 android:id="@+id/toggleButton9"
+                android:width = "100dp"
                 android:layout_column="3"
                 android:layout_gravity="left"
                 android:layout_row="1"
@@ -98,6 +104,7 @@
 
             <ToggleButton
                 android:id="@+id/buttonChevre"
+                android:width = "100dp"
                 android:layout_column="1"
                 android:layout_gravity="left"
                 android:layout_row="4"
@@ -106,6 +113,7 @@
             
             <ToggleButton
                 android:id="@+id/buttonEmmental"
+                android:width = "100dp"
                 android:layout_column="0"
                 android:layout_gravity="left"
                 android:layout_row="5"
@@ -128,6 +136,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TextView" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center" >
+
+        <Button
+            android:id="@+id/buttonRevenirBase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bouton_revenir_base" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bouton_confirmer" />
+
     </LinearLayout>
 
 </LinearLayout>
