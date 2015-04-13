@@ -24,8 +24,8 @@ public class FragmentComposition2 extends Fragment {
 			Bundle savedInstanceState) {
 
 		View view = inflater.inflate(R.layout.composition_layout2, container, false);
-		TextView textView = (TextView) view.findViewById(R.id.textView1);
-		textView.setText(base);
+//		TextView textView = (TextView) view.findViewById(R.id.textView1);
+//		textView.setText(base);
 		
 		return view;
 	}

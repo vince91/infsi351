@@ -12,5 +12,16 @@
     <string name="choix_base">Choisissez la base de votre pizza :</string>
     <string name="base_creme">Crème fraîche</string>
     <string name="base_tomate">Sauce tomate</string>
+    <string name="choix_garniture">Choisissez votre garniture</string>
+    <string name="viandes">Viandes :</string>
+    <string name="legumes">Légumes :</string>
+    <string name="fromages">Fromages :</string>
+    <string name="jambon">Jambon</string>
+    <string name="chorizo">Chorizo</string>
+    <string name="poulet">Poulet</string>
+    <string name="lardons">Lardons</string>
+    <string name="mozzarella">Mozzarella</string>
+    <string name="emmental">Emmental</string>
+    <string name="chevre">Chèvre</string>
 
 </resources>
