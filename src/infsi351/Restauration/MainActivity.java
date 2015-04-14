@@ -11,6 +11,7 @@ import android.view.View;
 public class MainActivity extends FragmentActivity implements
 		ActionBar.TabListener {
 
+	public Commande commande;
 	/**
 	 * The serialization (saved instance state) Bundle key representing the
 	 * current tab position.
@@ -21,6 +22,8 @@ public class MainActivity extends FragmentActivity implements
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		commande = new Commande();
 
 		// Set up the action bar to show tabs.
 		final ActionBar actionBar = getActionBar();
