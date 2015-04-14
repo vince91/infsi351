@@ -1,6 +1,6 @@
 package infsi351.Restauration;
 
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -25,7 +25,7 @@ public class FragmentAccueil extends Fragment {
 		// number argument value.
 		TextView textView = new TextView(getActivity());
 		textView.setGravity(Gravity.CENTER);
-		textView.setText("Accueil modifié");
+		textView.setText("Accueil modifi��");
 		return textView;
 	}
 }
