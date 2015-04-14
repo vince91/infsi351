@@ -98,25 +98,20 @@ public class MainActivity extends FragmentActivity implements
 	}
 	
 	public void switchToComposition2(String base) {
-		
 		Fragment fragment = new FragmentComposition2(base);
-		
 		android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
 		fragmentTransaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left);
 		fragmentTransaction.replace(R.id.container, fragment);
 		fragmentTransaction.commit();
-
 	}
 	
 	public void backToComposition1()
 	{
 		Fragment fragment = new FragmentComposition1();
-		
 		android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
 		fragmentTransaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_to_right);
 		fragmentTransaction.replace(R.id.container, fragment);
-		fragmentTransaction.commit();
-		
+		fragmentTransaction.commit();	
 	}
 
 
