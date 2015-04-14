@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
@@ -9,8 +10,34 @@
     <string name="menu_settings">Settings</string>
     <string name="title_section4">Garçon !</string>
     <string name="title_section5">Panier</string>
-    
-    
+    <string name="choix_base">Choisissez la base de votre pizza :</string>
+    <string name="base_creme">Crème fraîche</string>
+    <string name="base_tomate">Sauce tomate</string>
+    <string name="choix_garniture">Choisissez votre garniture</string>
+    <string name="type_ingredient1">Viandes :</string>
+    <string name="type_ingredient2">Légumes :</string>
+    <string name="type_ingredient3">Fromages :</string>
+    <string name="ingredient1">Jambon</string>
+    <string name="ingredient2">Chorizo</string>
+    <string name="ingredient3">Poulet</string>
+    <string name="ingredient4">Lardons</string>
+    <string name="ingredient5">Mozzarella</string>
+    <string name="ingredient6">Emmental</string>
+    <string name="ingredient7">Chèvre</string>
+    <string name="your_cart">Votre commande</string>
+    <string name="cart_item">Votre produit</string>
+    <string name="delete_item">X</string>
+    <string name="confirm_order">Valider la commande</string>
+    <string name="modify_item">Modifier</string>
+    <string name="pizzas_title">Vos pizzas</string>
+    <string name="drink_title">Vos boissons</string>
+    <string name="item_description">Tomates, endives, fromages</string>
+    <string name="price_item">20 €</string>
+    <string name="bill">20 €</string>
+    <string name="total">Total : </string>
+    <string name="ingredient8">iing8</string>
+    <string name="ingredient9">ing9</string>
+    <string name="ingredient10">ing10</string>
     <string name="button_eau">Demande Eau</string>
     <string name="button_pain">Demande Pain</string>
     <string name="button_serveur">Appel Serveur</string>
@@ -18,7 +45,7 @@
     <string name="eau_message">Quantité:</string>
     <string name="merci_message">Merci! Commande enregistré.</string>
     <string name="chronom_message">Votre commande sera pret en:</string>
-     <string name="button_addition">Demander l\'addition</string>
-      <string name="button_camera">Regarder la preparation de votre plat</string>
+    <string name="button_addition">Demander l\'addition</string>
+    <string name="button_camera">Regarder la preparation de votre plat</string>
 
 </resources>

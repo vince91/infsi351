@@ -25,7 +25,7 @@ public class FragmentAccueil extends Fragment {
 		// number argument value.
 		TextView textView = new TextView(getActivity());
 		textView.setGravity(Gravity.CENTER);
-		textView.setText("Accueil modifié");
+		textView.setText("Accueil modifi��");
 		return textView;
 	}
 }
