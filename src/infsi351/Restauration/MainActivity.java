@@ -5,8 +5,8 @@ import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.view.Menu;
-import android.view.View;
 
 public class MainActivity extends FragmentActivity implements
 		ActionBar.TabListener {
@@ -16,6 +16,7 @@ public class MainActivity extends FragmentActivity implements
 	 * current tab position.
 	 */
 	private static final String STATE_SELECTED_NAVIGATION_ITEM = "selected_navigation_item";
+	private Pizza pizza;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -74,8 +75,10 @@ public class MainActivity extends FragmentActivity implements
 
 		if (tab_num == 0)
 			frag = new FragmentAccueil();
-		else if (tab_num == 1)
+		else if (tab_num == 1) {
+			pizza = new Pizza();
 			frag = new FragmentComposition1();
+		}
 		else if (tab_num == 2)
 			frag = new FragmentBoisson();
 		else if (tab_num == 3)
@@ -97,8 +100,8 @@ public class MainActivity extends FragmentActivity implements
 			FragmentTransaction fragmentTransaction) {
 	}
 	
-	public void switchToComposition2(String base) {
-		Fragment fragment = new FragmentComposition2(base);
+	public void switchToComposition2() {
+		Fragment fragment = new FragmentComposition2();
 		android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
 		fragmentTransaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left);
 		fragmentTransaction.replace(R.id.container, fragment);
@@ -112,6 +115,10 @@ public class MainActivity extends FragmentActivity implements
 		fragmentTransaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_to_right);
 		fragmentTransaction.replace(R.id.container, fragment);
 		fragmentTransaction.commit();	
+	}
+	
+	public Pizza getPizza() {
+		return pizza;
 	}
 
 

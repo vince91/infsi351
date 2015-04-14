@@ -34,9 +34,9 @@
     <string name="price_item">20 €</string>
     <string name="bill">20 €</string>
     <string name="total">Total : </string>
-    <string name="ingredient8">iing8</string>
-    <string name="ingredient9">ing9</string>
-    <string name="ingredient10">ing10</string>
+    <string name="ingredient8">Poivrons</string>
+    <string name="ingredient9">Olives</string>
+    <string name="ingredient10">Oignons</string>
     <string name="button_eau">Demande Eau</string>
     <string name="button_pain">Demande Pain</string>
     <string name="button_serveur">Appel Serveur</string>
@@ -46,7 +46,7 @@
     <string name="chronom_message">Votre commande sera pret en:</string>
     <string name="button_addition">Demander l\'addition</string>
     <string name="button_camera">Regarder la preparation de votre plat</string>
-    <string name="bouton_revenir_base">Base</string>
-    <string name="bouton_confirmer">Confirmer</string>
+    <string name="bouton_revenir_base">&lt; Changer la base de la pizza</string>
+    <string name="bouton_confirmer">Confirmer la pizza &gt;</string>
 
 </resources>
