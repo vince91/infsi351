@@ -25,9 +25,13 @@ public class FragmentAccueil extends Fragment {
 			Bundle savedInstanceState) {
 		// Create a new TextView and set its text to the fragment's section
 		// number argument value.
-		TextView textView = new TextView(getActivity());
-		textView.setGravity(Gravity.CENTER);
-		textView.setText("Accueil modifi��");
-		return textView;
+		
+		View view = inflater.inflate(R.layout.accueil_layout, container, false);
+		
+//		TextView textView = new TextView(getActivity());
+//		textView.setGravity(Gravity.CENTER);
+//		textView.setText("Accueil modifi��");
+		return view;
+		
 	}
 }
