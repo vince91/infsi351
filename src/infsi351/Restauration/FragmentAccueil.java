@@ -17,6 +17,8 @@ public class FragmentAccueil extends Fragment {
 
 	public FragmentAccueil() {
 	}
+	
+
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
