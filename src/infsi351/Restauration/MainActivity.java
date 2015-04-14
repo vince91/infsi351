@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
+import android.view.View;
 
 public class MainActivity extends FragmentActivity implements
 		ActionBar.TabListener {
@@ -74,7 +75,7 @@ public class MainActivity extends FragmentActivity implements
 		if (tab_num == 0)
 			frag = new FragmentAccueil();
 		else if (tab_num == 1)
-			frag = new FragmentComposition();
+			frag = new FragmentComposition1();
 		else if (tab_num == 2)
 			frag = new FragmentBoisson();
 		else if (tab_num == 3)
@@ -94,6 +95,17 @@ public class MainActivity extends FragmentActivity implements
 	@Override
 	public void onTabReselected(ActionBar.Tab tab,
 			FragmentTransaction fragmentTransaction) {
+	}
+	
+	public void switchToComposition2(String base) {
+		
+		Fragment fragment = new FragmentComposition2(base);
+		
+		android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+		fragmentTransaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left);
+		fragmentTransaction.replace(R.id.container, fragment);
+		fragmentTransaction.commit();
+
 	}
 
 
