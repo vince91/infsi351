@@ -8,14 +8,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-public class FragmentServeur extends Fragment {
+public class FragmentApresCommande extends Fragment {
 	/**
 	 * The fragment argument representing the section number for this
 	 * fragment.
 	 */
 	public static final String ARG_SECTION_NUMBER = "section_number";
 
-	public FragmentServeur() {
+	public FragmentApresCommande() {
 	}
 
 	@Override
@@ -26,9 +26,9 @@ public class FragmentServeur extends Fragment {
 		
 		/*TextView textView = new TextView(getActivity());
 		textView.setGravity(Gravity.CENTER);
-		textView.setText("Serveur");
+		textView.setText("FragmentApresCommande");
 		return textView;
 		*/
-		return inflater.inflate(R.layout.serveur_fragment, container, false);
+		return inflater.inflate(R.layout.aprescommande_fragment, container, false);
 	}
 }

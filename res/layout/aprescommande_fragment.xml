@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+  
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:stretchColumns="1">
+	<TableRow>
+	    <TextView android:id="@+id/merci_message"
+        	android:layout_width="match_parent"
+        	android:layout_height="match_parent"
+        	android:layout_gravity="center"
+        	android:hint="@string/merci_message" />
+	    
+	</TableRow>
+	<TableRow>
+	     <TextView android:id="@+id/chronom_message"
+        	android:layout_width="match_parent"
+        	android:layout_height="match_parent"
+        	android:layout_gravity="center"
+        	android:hint="@string/chronom_message" />
+	    	<Chronometer
+    		android:id="@+id/chrometer"
+ 			android:layout_height="wrap_content" 
+ 			android:layout_width="wrap_content" 
+   			android:textStyle="bold"
+ 			android:textSize="50sp"/>
+	    
+	    <Button
+       		android:id="@+id/button_addition"
+        	android:layout_width="150dp"
+        	android:layout_height="150dp"
+        	android:layout_gravity="center"
+        	android:text="@string/button_addition"
+			android:drawableTop="@drawable/icon_addition"  />
+	    <Button
+       		android:id="@+id/button_camera"
+        	android:layout_width="150dp"
+        	android:layout_height="150dp"
+        	android:layout_gravity="center"
+        	android:text="@string/button_camera"
+			android:drawableTop="@drawable/icon_videocamera"  /> 
+	</TableRow>
+
+
+</TableLayout>

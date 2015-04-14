@@ -37,5 +37,14 @@
     <string name="ingredient8">iing8</string>
     <string name="ingredient9">ing9</string>
     <string name="ingredient10">ing10</string>
+    <string name="button_eau">Demande Eau</string>
+    <string name="button_pain">Demande Pain</string>
+    <string name="button_serveur">Appel Serveur</string>
+    <string name="button_toilettes">Toilettes</string>
+    <string name="eau_message">Quantité:</string>
+    <string name="merci_message">Merci! Commande enregistré.</string>
+    <string name="chronom_message">Votre commande sera pret en:</string>
+    <string name="button_addition">Demander l\'addition</string>
+    <string name="button_camera">Regarder la preparation de votre plat</string>
 
 </resources>
