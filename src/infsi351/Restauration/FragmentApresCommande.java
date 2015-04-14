@@ -8,14 +8,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-public class FragmentAccueil extends Fragment {
+public class FragmentApresCommande extends Fragment {
 	/**
 	 * The fragment argument representing the section number for this
 	 * fragment.
 	 */
 	public static final String ARG_SECTION_NUMBER = "section_number";
 
-	public FragmentAccueil() {
+	public FragmentApresCommande() {
 	}
 
 	@Override
@@ -23,9 +23,12 @@ public class FragmentAccueil extends Fragment {
 			Bundle savedInstanceState) {
 		// Create a new TextView and set its text to the fragment's section
 		// number argument value.
-		TextView textView = new TextView(getActivity());
+		
+		/*TextView textView = new TextView(getActivity());
 		textView.setGravity(Gravity.CENTER);
-		textView.setText("Accueil modifi��");
+		textView.setText("FragmentApresCommande");
 		return textView;
+		*/
+		return inflater.inflate(R.layout.aprescommande_fragment, container, false);
 	}
 }

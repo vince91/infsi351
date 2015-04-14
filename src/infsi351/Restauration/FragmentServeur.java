@@ -23,9 +23,12 @@ public class FragmentServeur extends Fragment {
 			Bundle savedInstanceState) {
 		// Create a new TextView and set its text to the fragment's section
 		// number argument value.
-		TextView textView = new TextView(getActivity());
+		
+		/*TextView textView = new TextView(getActivity());
 		textView.setGravity(Gravity.CENTER);
 		textView.setText("Serveur");
 		return textView;
+		*/
+		return inflater.inflate(R.layout.serveur_fragment, container, false);
 	}
 }
