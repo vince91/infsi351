@@ -23,5 +23,16 @@
     <string name="mozzarella">Mozzarella</string>
     <string name="emmental">Emmental</string>
     <string name="chevre">Chèvre</string>
+    <string name="your_cart">Votre commande</string>
+    <string name="cart_item">Votre produit</string>
+    <string name="delete_item">X</string>
+    <string name="confirm_order">Valider la commande</string>
+    <string name="modify_item">Modifier</string>
+    <string name="pizzas_title">Vos pizzas</string>
+    <string name="drink_title">Vos boissons</string>
+    <string name="item_description">Tomates, endives, fromages</string>
+    <string name="price_item">20 €</string>
+    <string name="bill">20 €</string>
+    <string name="total">Total : </string>
 
 </resources>
