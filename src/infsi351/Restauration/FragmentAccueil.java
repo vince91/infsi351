@@ -1,5 +1,8 @@
 package infsi351.Restauration;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.os.Bundle;
@@ -13,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class FragmentAccueil extends Fragment {
 	/**
@@ -42,6 +46,8 @@ public class FragmentAccueil extends Fragment {
 		mPager = (ViewPager) view.findViewById(R.id.pager);
         mPagerAdapter = new ScreenSlidePagerAdapter( ((MainActivity) getActivity()).getSupportFragmentManager());
         mPager.setAdapter(mPagerAdapter);
+
+        
 		
 		return view;
 		
@@ -50,10 +56,12 @@ public class FragmentAccueil extends Fragment {
 	private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
         public ScreenSlidePagerAdapter(android.support.v4.app.FragmentManager fm) {
             super(fm);
+            this.pageSwitcher(3);
         }
 
         @Override
         public Fragment getItem(int position) {
+        	
         	if (position == 0){
         		return new SlidePage1_Accueil();
         	}
@@ -77,6 +85,42 @@ public class FragmentAccueil extends Fragment {
         public int getCount() {
             return NUM_PAGES;
         }
+        
+        Timer timer;
+        int page = 0;
+
+        public void pageSwitcher(int seconds) {
+            timer = new Timer(); // At this line a new Thread will be created
+            timer.scheduleAtFixedRate(new RemindTask(), 0, seconds * 1000); // delay
+                                                                            // in
+            // milliseconds
+        }
+
+            // this is an inner class...
+        class RemindTask extends TimerTask {
+
+            @Override
+            public void run() {
+
+                // As the TimerTask run on a seprate thread from UI thread we have
+                // to call runOnUiThread to do work on UI thread.
+            	((MainActivity) getActivity()).runOnUiThread(new Runnable() {
+                    public void run() {
+
+                        if (page > 4) { // In my case the number of pages are 5
+                            timer.cancel();
+                            // Showing a toast for just testing purpose
+                            Toast.makeText(((MainActivity) getActivity()).getApplicationContext(), "Timer stoped",
+                                    Toast.LENGTH_LONG).show();
+                        } else {
+                            mPager.setCurrentItem(page++);
+                        }
+                    }
+                });
+
+            }
+        }
+
         
         
     }
