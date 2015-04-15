@@ -52,5 +52,8 @@
     <string name="panier_message">Accédez à votre panier et valider la commande !</string>
     <string name="garcon_message">Appelez le serveur à tout moment !</string>
     <string name="image_slide1_description">Image pour le slide 1 de l\'accueil</string>
+    <string name="bouton_revenir_base">Base</string>
+    <string name="bouton_confirmer">Confirmer</string>
+
 
 </resources>
