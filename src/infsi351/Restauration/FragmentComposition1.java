@@ -15,6 +15,7 @@ public class FragmentComposition1 extends Fragment {
 	public static final String ARG_SECTION_NUMBER = "section_number";
 
 	public FragmentComposition1() {
+		
 	}
 
 	@Override
@@ -22,18 +23,22 @@ public class FragmentComposition1 extends Fragment {
 			Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.composition_layout1, container, false);
-
+        final MainActivity mainActivity = (MainActivity) getActivity();
+        final Pizza pizza = mainActivity.getPizza();
+        
 		 final Button button_tomate = (Button) view.findViewById(R.id.button_tomate);
          button_tomate.setOnClickListener(new View.OnClickListener() {
              public void onClick(View v) {
-            	 ((MainActivity) getActivity()).switchToComposition2("tomate");
+            	 pizza.changerBase("tomate");
+            	 mainActivity.switchToComposition2();
              }
          });
          
          final Button button_creme = (Button) view.findViewById(R.id.button_creme);
          button_creme.setOnClickListener(new View.OnClickListener() {
              public void onClick(View v) {
-            	 ((MainActivity) getActivity()).switchToComposition2("creme");
+            	 pizza.changerBase("creme");
+            	 mainActivity.switchToComposition2();
              }
          });         
 		

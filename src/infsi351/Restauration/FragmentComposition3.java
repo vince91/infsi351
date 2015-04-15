@@ -5,7 +5,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 public class FragmentComposition3 extends Fragment {
 	/**
@@ -13,10 +12,8 @@ public class FragmentComposition3 extends Fragment {
 	 * fragment.
 	 */
 	public static final String ARG_SECTION_NUMBER = "section_number";
-	private String base;
 
-	public FragmentComposition3(String base) {
-		this.base = base;
+	public FragmentComposition3() {
 	}
 
 	@Override
