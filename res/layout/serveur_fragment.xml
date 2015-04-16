@@ -35,9 +35,7 @@
         	android:layout_gravity="center"
         	android:text="@string/button_eau"
 			android:drawableTop="@drawable/icon_caraffe"  /> 
-		
-		
-		
+
 	    <Button
         	android:id="@+id/button_serveur"
         	android:layout_width="150dp"

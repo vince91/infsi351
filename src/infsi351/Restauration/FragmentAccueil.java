@@ -32,15 +32,12 @@ public class FragmentAccueil extends Fragment {
 	}
 	
 
-	
-
-
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// Create a new TextView and set its text to the fragment's section
 		// number argument value.
-		/*
+		
 		View view = inflater.inflate(R.layout.screen_slide_accueil, container, false);
 		
 		mPager = (ViewPager) view.findViewById(R.id.pager);
@@ -50,16 +47,9 @@ public class FragmentAccueil extends Fragment {
         
 		
 		return view;
-		*/
-		View view = inflater.inflate(R.layout.aprescommande_fragment, container, false);
-		
-		
-		
-		
-		return view ;
 		
 	}
-	/*
+	
 	private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
         public ScreenSlidePagerAdapter(android.support.v4.app.FragmentManager fm) {
             super(fm);
@@ -130,5 +120,5 @@ public class FragmentAccueil extends Fragment {
 
         
         
-    }*/
+    }
 }
