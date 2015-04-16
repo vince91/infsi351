@@ -5,6 +5,9 @@ import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.view.ViewPager;
+import android.view.Menu;
+
 import android.util.Log;
 import android.view.Menu;
 
@@ -17,7 +20,11 @@ public class MainActivity extends FragmentActivity implements
 	 * current tab position.
 	 */
 	private static final String STATE_SELECTED_NAVIGATION_ITEM = "selected_navigation_item";
+
+	
+
 	private Pizza pizza;
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
