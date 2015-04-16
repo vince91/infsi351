@@ -1,4 +1,4 @@
-<!-- <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/serveur_view"
     android:layout_width="match_parent"
@@ -6,77 +6,86 @@
     tools:context=".MainActivity"
     tools:ignore="MergeRootFrame" > 
  
-    <EditText android:id="@+id/edit_message"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="@string/edit_message" /> -->
-        
-<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   
+    
+<TableLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    android:layout_centerVertical="true"
-    android:orientation="horizontal"  > -->
-    
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:orientation="horizontal" >
-
-    <RelativeLayout 
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:layout_gravity="top"
-       android:layout_weight="1.0">   
+	android:layout_height="match_parent">
+    <TableRow
+         android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	    <TextView android:id="@+id/serveur_message"
+        	android:layout_width="match_parent"
+        	android:layout_height="match_parent"
+        	android:layout_gravity="center"
+        	android:hint="@string/serveur_message" />
+	</TableRow>
+	
+    <TableRow
+        android:layout_width="match_parent"
+		android:layout_height="match_parent">   
        <Button
        		android:id="@+id/button_eau"
-        	android:layout_width="200dp"
-        	android:layout_height="200dp"
-        	android:layout_centerInParent="true"
+        	android:layout_width="150dp"
+        	android:layout_height="150dp"
+        	android:layout_marginBottom="10dp"
+        	android:layout_marginLeft="10dp"
+        	android:layout_marginRight="10dp"
+        	android:layout_marginTop="10dp" 
+        	android:layout_gravity="center"
         	android:text="@string/button_eau"
 			android:drawableTop="@drawable/icon_caraffe"  /> 
-	</RelativeLayout>
-	<RelativeLayout 
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:layout_gravity="bottom"
-       android:layout_weight="1.0"> 
-		<Button
+		
+		
+		
+	    <Button
+        	android:id="@+id/button_serveur"
+        	android:layout_width="150dp"
+        	android:layout_height="150dp"
+        	android:layout_marginBottom="10dp"
+        	android:layout_marginLeft="10dp"
+        	android:layout_marginRight="10dp"
+        	android:layout_marginTop="10dp" 
+        	android:layout_gravity="center"
+        	android:text="@string/button_serveur"
+        	android:drawableTop="@drawable/icon_serveur"/>
+	    
+    </TableRow>
+    <TableRow 
+        android:layout_width="match_parent"
+		android:layout_height="match_parent">
+        <Button
         	android:id="@+id/button_pain"
-        	android:layout_width="200dp"
-        	android:layout_height="200dp"
-       		android:layout_centerInParent="true"
+        	android:layout_width="150dp"
+        	android:layout_height="150dp"
+        	android:layout_marginBottom="10dp"
+        	android:layout_marginLeft="10dp"
+        	android:layout_marginRight="10dp"
+        	android:layout_marginTop="10dp" 
+        	android:layout_gravity="center"
+        	
        		android:text="@string/button_pain"
         	android:drawableTop="@drawable/icon_bread" />
-	</RelativeLayout>
-	  
-	<RelativeLayout 
-	 android:layout_width="match_parent"
-     android:layout_height="match_parent"
-     android:layout_weight="1.0"
-     android:baselineAligned="false">
-	    <Button
-        android:id="@+id/button_serveur"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-       	android:layout_centerInParent="true"
-        android:text="@string/button_serveur"
-        android:drawableTop="@drawable/icon_serveur"/>
-	</RelativeLayout>
-	<RelativeLayout 
-	 android:layout_width="match_parent"
-     android:layout_height="match_parent"
-     android:layout_weight="1.0"
-     android:baselineAligned="false">
         <Button
-        android:id="@+id/button_toilettes"
-       	android:layout_width="200dp"
-        android:layout_height="200dp"
-       	android:layout_centerInParent="true"
-        android:text="@string/button_toilettes"
-        android:drawableTop="@drawable/icon_toilettes"/>       
-    </RelativeLayout>
+        	android:id="@+id/button_toilettes"
+       		android:layout_width="150dp"
+        	android:layout_height="150dp"
+        	android:layout_marginBottom="10dp"
+        	android:layout_marginLeft="10dp"
+        	android:layout_marginRight="10dp"
+        	android:layout_marginTop="10dp" 
+        	android:layout_gravity="center"
+        	android:gravity="center|bottom"
+        	android:padding="10dp"
+			android:scaleType="fitCenter"
+			
+        	android:text="@string/button_toilettes"
+        	android:drawableTop="@drawable/icon_toilettes"/>
+        
+    </TableRow>
+    
+    
+</TableLayout>
 
-</LinearLayout>
+    
+</FrameLayout>

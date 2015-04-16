@@ -1,10 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
-  
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/aprescommande_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:ignore="MergeRootFrame" > 
+    
+<TableLayout 
 android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:stretchColumns="1">
-	<TableRow>
+android:layout_height="match_parent">
+	<TableRow
+	    android:layout_width="match_parent"
+		android:layout_height="match_parent">
 	    <TextView android:id="@+id/merci_message"
         	android:layout_width="match_parent"
         	android:layout_height="match_parent"
@@ -12,34 +19,64 @@ android:stretchColumns="1">
         	android:hint="@string/merci_message" />
 	    
 	</TableRow>
-	<TableRow>
-	     <TextView android:id="@+id/chronom_message"
-        	android:layout_width="match_parent"
-        	android:layout_height="match_parent"
-        	android:layout_gravity="center"
-        	android:hint="@string/chronom_message" />
-	    	<Chronometer
-    		android:id="@+id/chrometer"
- 			android:layout_height="wrap_content" 
- 			android:layout_width="wrap_content" 
-   			android:textStyle="bold"
- 			android:textSize="50sp"/>
-	    
-	    <Button
-       		android:id="@+id/button_addition"
-        	android:layout_width="150dp"
-        	android:layout_height="150dp"
-        	android:layout_gravity="center"
-        	android:text="@string/button_addition"
-			android:drawableTop="@drawable/icon_addition"  />
-	    <Button
+	<TableRow
+	    android:layout_width="match_parent"
+		android:layout_height="match_parent">
+	    <TableLayout >
+	        <TableRow android:layout_weight="1"
+	            android:layout_width="match_parent"
+				android:layout_height="match_parent">
+				<ImageView
+    			android:id="@+id/chronom_img"
+ 				android:layout_height="wrap_content" 
+ 				android:layout_width="wrap_content"
+        		android:layout_gravity="center"
+        		android:src="@drawable/icon_chronom"/>
+	        </TableRow>
+	        <TableRow android:layout_weight="1"
+	            android:layout_width="match_parent"
+				android:layout_height="match_parent">
+	             <TextView android:id="@+id/chronom_message"
+        			android:layout_width="match_parent"
+        			android:layout_height="match_parent"
+        			android:layout_gravity="center"
+        			android:hint="@string/chronom_message" />
+	        </TableRow> 
+	        <TableRow android:layout_weight="1"
+	            android:layout_width="match_parent"
+				android:layout_height="match_parent">
+	            <Chronometer
+    			android:id="@+id/chrometer"
+ 				android:layout_height="wrap_content" 
+ 				android:layout_width="wrap_content"
+        		android:layout_gravity="center"
+ 				android:textSize="40sp"/>
+	        </TableRow> 
+	    </TableLayout>
+	   
+	    <Button android:layout_weight="1"
        		android:id="@+id/button_camera"
         	android:layout_width="150dp"
         	android:layout_height="150dp"
-        	android:layout_gravity="center"
-        	android:text="@string/button_camera"
-			android:drawableTop="@drawable/icon_videocamera"  /> 
+        	android:layout_marginBottom="10dp"
+        	android:layout_marginLeft="10dp"
+        	android:layout_marginRight="10dp"
+        	android:layout_marginTop="10dp" 
+        	android:layout_gravity="center"    
+        	android:text="@string/button_camera"/> 
+	    <Button android:layout_weight="1"
+       		android:id="@+id/button_addition"
+        	android:layout_width="150dp"
+        	android:layout_height="150dp"
+        	android:layout_marginBottom="10dp"
+        	android:layout_marginLeft="10dp"
+        	android:layout_marginRight="10dp"
+        	android:layout_marginTop="10dp" 
+        	android:layout_gravity="center"   
+        	android:text="@string/button_addition" />
+	    
 	</TableRow>
 
 
 </TableLayout>
+</FrameLayout>

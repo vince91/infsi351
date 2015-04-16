@@ -43,9 +43,10 @@
     <string name="button_toilettes">Toilettes</string>
     <string name="eau_message">Quantité:</string>
     <string name="merci_message">Merci! Commande enregistré.</string>
-    <string name="chronom_message">Votre commande sera pret en:</string>
+    <string name="chronom_message">Temps d\'attente:</string>
     <string name="button_addition">Demander l\'addition</string>
-    <string name="button_camera">Regarder la preparation de votre plat</string>
+    <string name="serveur_message">Garçon!</string>
+    <string name="button_camera">Voir la cusine</string>
     <string name="bouton_revenir_base">&lt; Changer la base de la pizza</string>
     <string name="bouton_confirmer">Confirmer la pizza &gt;</string>
 
