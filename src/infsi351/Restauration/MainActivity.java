@@ -139,6 +139,11 @@ public class MainActivity extends FragmentActivity implements
 	public Pizza getPizza() {
 		return pizza;
 	}
+	
+	public void validerPizza() {
+		commande.add_pizza(pizza);
+		pizza = new Pizza();
+	}
 
 
 }

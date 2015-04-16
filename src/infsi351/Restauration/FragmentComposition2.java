@@ -52,7 +52,8 @@ public class FragmentComposition2 extends Fragment {
 		final Button button_valider = (Button) view.findViewById(R.id.buttonConfirmerPizza);
         button_valider.setOnClickListener(new View.OnClickListener() {
              public void onClick(View v) {
-            	 Log.d("app", pizza.getBase() + "-" + pizza.getIngredient());
+            	 mainActivity.validerPizza();
+            	 Log.d("app", pizza.getBase() + "-" + pizza.getIngredient() + " " + pizza.getPrix() + "euros");
              }
          });
 
@@ -67,7 +68,7 @@ public class FragmentComposition2 extends Fragment {
 			
 			GridLayout ingredientGrid = (GridLayout) viewIngredient.findViewById(R.id.gridIngredient);
 			
-			for(String ingredient : entry.getValue()) {
+			for(final String ingredient : entry.getValue()) {
 				ToggleButton button = new ToggleButton(getActivity());
 				
 				final String ingredientString = res.getString(res.getIdentifier(ingredient, "string", packageName));
@@ -77,16 +78,16 @@ public class FragmentComposition2 extends Fragment {
 				button.setWidth((int)(100 * density));
 				ingredientGrid.addView(button);
 				
-				if (pizza.checkIngredient(ingredientString))
+				if (pizza.checkIngredient(ingredient))
 					button.toggle();
 				
 				button.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 					@Override
 					public void onCheckedChanged(CompoundButton toggleButton, boolean isChecked) {
 						if (isChecked)
-							pizza.ajouterIngredient(ingredientString);
+							pizza.ajouterIngredient(ingredient);
 						else
-							pizza.removeIngredient(ingredientString);
+							pizza.removeIngredient(ingredient);
 					}
 				});
 				
