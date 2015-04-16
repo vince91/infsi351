@@ -43,9 +43,10 @@
     <string name="button_toilettes">Toilettes</string>
     <string name="eau_message">Quantité:</string>
     <string name="merci_message">Merci! Commande enregistré.</string>
-    <string name="chronom_message">Votre commande sera pret en:</string>
+    <string name="chronom_message">Temps d\'attente:</string>
     <string name="button_addition">Demander l\'addition</string>
-    <string name="button_camera">Regarder la preparation de votre plat</string>
+    <string name="button_camera">Voir la cusine</string>
+    <string name="serveur_message">Garçon!</string>
     <string name="bienvenue_message">Bienvenue sur votre nouvelle carte intéractive !</string>
     <string name="composition_message">Composez vous-même votre pizza dans l\'onglet Composition !</string>
     <string name="boisson_message">Choisissez votre boisson...</string>
@@ -54,7 +55,7 @@
     <string name="image_slide1_description">Image pour le slide 1 de l\'accueil</string>
     <string name="bouton_revenir_base">Base</string>
     <string name="bouton_confirmer">Confirmer</string>
-
+    <string name="cart_empty_item_text">Vide</string>
 
 
 </resources>
