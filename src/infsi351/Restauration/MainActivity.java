@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.Menu;
+import android.view.View;
 
 public class MainActivity extends FragmentActivity implements
 		ActionBar.TabListener {
@@ -118,6 +119,21 @@ public class MainActivity extends FragmentActivity implements
 		fragmentTransaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_to_right);
 		fragmentTransaction.replace(R.id.container, fragment);
 		fragmentTransaction.commit();	
+	}
+	
+	public void refresh_da_panier(){
+		Fragment fragment = new FragmentPanier();
+		android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+		fragmentTransaction.replace(R.id.container, fragment);
+		fragmentTransaction.commit();
+	}
+	
+	public void valider_la_commande(View v){
+		Fragment fragment = new FragmentApresCommande();
+		android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+		fragmentTransaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_to_right);
+		fragmentTransaction.replace(R.id.container, fragment);
+		fragmentTransaction.commit();
 	}
 	
 	public Pizza getPizza() {
