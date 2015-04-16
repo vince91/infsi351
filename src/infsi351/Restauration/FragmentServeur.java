@@ -1,12 +1,13 @@
 package infsi351.Restauration;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.Button;
 
 public class FragmentServeur extends Fragment {
 	/**
@@ -24,11 +25,59 @@ public class FragmentServeur extends Fragment {
 		// Create a new TextView and set its text to the fragment's section
 		// number argument value.
 		
-		/*TextView textView = new TextView(getActivity());
-		textView.setGravity(Gravity.CENTER);
-		textView.setText("Serveur");
-		return textView;
-		*/
-		return inflater.inflate(R.layout.serveur_fragment, container, false);
-	}
+		View view = inflater.inflate(R.layout.serveur_fragment, container, false);
+		
+		final Button button_eau = (Button) view.findViewById(R.id.button_eau);
+        button_eau.setOnClickListener(new View.OnClickListener() {
+        	public void onClick(View v) {
+            	
+            	AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+            	builder.setMessage("Voulez-vous une caraffe d'eau?").setTitle("Eau");
+            	builder.setPositiveButton("Oui,svp!", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // User clicked OK button
+                    }
+                });
+            	builder.setNegativeButton("No, merci!", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // User cancelled the dialog
+                    }
+                });
+         // Set other dialog properties
+         //...
+
+         // Create the AlertDialog
+         		AlertDialog dialog = builder.create();
+         		dialog.show();
+            }
+        });
+        
+        final Button button_pain = (Button) view.findViewById(R.id.button_pain);
+        button_pain.setOnClickListener(new View.OnClickListener() {
+        	public void onClick(View v) {
+            	
+            	AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+            	builder.setMessage("Voulez-vous du pain?").setTitle("Pain");
+            	builder.setPositiveButton("Oui,svp!", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // User clicked OK button
+                    }
+                });
+            	builder.setNegativeButton("No, merci!", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // User cancelled the dialog
+                    }
+                });
+         // Set other dialog properties
+         //...
+
+         // Create the AlertDialog
+         		AlertDialog dialog = builder.create();
+         		dialog.show();
+            }
+        });
+		
+		
+		
+		return view ;	}
 }

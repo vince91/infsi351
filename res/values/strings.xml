@@ -34,17 +34,28 @@
     <string name="price_item">20 €</string>
     <string name="bill">20 €</string>
     <string name="total">Total : </string>
-    <string name="ingredient8">iing8</string>
-    <string name="ingredient9">ing9</string>
-    <string name="ingredient10">ing10</string>
+    <string name="ingredient8">Olives</string>
+    <string name="ingredient9">Poivrons</string>
+    <string name="ingredient10">Oignons</string>
     <string name="button_eau">Demande Eau</string>
     <string name="button_pain">Demande Pain</string>
     <string name="button_serveur">Appel Serveur</string>
     <string name="button_toilettes">Toilettes</string>
     <string name="eau_message">Quantité:</string>
     <string name="merci_message">Merci! Commande enregistré.</string>
-    <string name="chronom_message">Votre commande sera pret en:</string>
+    <string name="chronom_message">Temps d\'attente:</string>
     <string name="button_addition">Demander l\'addition</string>
-    <string name="button_camera">Regarder la preparation de votre plat</string>
+    <string name="button_camera">Voir la cusine</string>
+    <string name="serveur_message">Garçon!</string>
+    <string name="bienvenue_message">Bienvenue sur votre nouvelle carte intéractive !</string>
+    <string name="composition_message">Composez vous-même votre pizza dans l\'onglet Composition !</string>
+    <string name="boisson_message">Choisissez votre boisson...</string>
+    <string name="panier_message">Accédez à votre panier et valider la commande !</string>
+    <string name="garcon_message">Appelez le serveur à tout moment !</string>
+    <string name="image_slide1_description">Image pour le slide 1 de l\'accueil</string>
+    <string name="bouton_revenir_base">&lt; Changer la base de la pizza</string>
+    <string name="bouton_confirmer">Confirmer la pizza &gt;</string>
+    <string name="cart_empty_item_text">Vide</string>
+
 
 </resources>

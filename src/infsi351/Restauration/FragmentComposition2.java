@@ -7,8 +7,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.TextView;
-import android.widget.LinearLayout;
 import android.widget.GridLayout;
 import android.widget.ToggleButton;
 
@@ -21,24 +23,44 @@ public class FragmentComposition2 extends Fragment {
 	 * fragment.
 	 */
 	public static final String ARG_SECTION_NUMBER = "section_number";
-	private String base;
+	private MainActivity mainActivity;
+	private Pizza pizza;
 
-	public FragmentComposition2(String base) {
-		this.base = base;
+	public FragmentComposition2() {
+
 	}
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
+		
+		mainActivity = (MainActivity) getActivity();
+		pizza = mainActivity.getPizza();
 
 		Resources res = getResources();
 		String packageName = getActivity().getPackageName();
 		
 		View view = inflater.inflate(R.layout.composition_layout2, container, false);
+
+		final Button button_retour = (Button) view.findViewById(R.id.buttonRevenirBase);
+        button_retour.setOnClickListener(new View.OnClickListener() {
+             public void onClick(View v) {
+            	 ((MainActivity) getActivity()).backToComposition1();
+             }
+         });
+        
+		final Button button_valider = (Button) view.findViewById(R.id.buttonConfirmerPizza);
+        button_valider.setOnClickListener(new View.OnClickListener() {
+             public void onClick(View v) {
+            	 mainActivity.validerPizza();
+            	 Log.d("app", pizza.getBase() + "-" + pizza.getIngredient() + " " + pizza.getPrix() + "euros");
+             }
+         });
+
 		GridLayout gridLayout = (GridLayout) view.findViewById(R.id.gridLayout);
 		float density = res.getDisplayMetrics().density;
 		
-		for (Map.Entry<String, List<String>> entry : Pizza.ingredients.entrySet())
+		for (Map.Entry<String, List<String>> entry : Pizza.INGREDIENTS.entrySet())
 		{
 			View viewIngredient = inflater.inflate(R.layout.liste_ingredients, (ViewGroup) view, false);
 			TextView titre = (TextView) viewIngredient.findViewById(R.id.titreIngredient);
@@ -46,22 +68,32 @@ public class FragmentComposition2 extends Fragment {
 			
 			GridLayout ingredientGrid = (GridLayout) viewIngredient.findViewById(R.id.gridIngredient);
 			
-			for(String ingredient : entry.getValue()) {
+			for(final String ingredient : entry.getValue()) {
 				ToggleButton button = new ToggleButton(getActivity());
 				
-				String ingredientString = res.getString(res.getIdentifier(ingredient, "string", packageName));
-				Log.d("app", ingredientString);
+				final String ingredientString = res.getString(res.getIdentifier(ingredient, "string", packageName));
 				button.setText(ingredientString);
 				button.setTextOff(ingredientString);
 				button.setTextOn(ingredientString);
 				button.setWidth((int)(100 * density));
 				ingredientGrid.addView(button);
 				
+				if (pizza.checkIngredient(ingredient))
+					button.toggle();
+				
+				button.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+					@Override
+					public void onCheckedChanged(CompoundButton toggleButton, boolean isChecked) {
+						if (isChecked)
+							pizza.ajouterIngredient(ingredient);
+						else
+							pizza.removeIngredient(ingredient);
+					}
+				});
 				
 			}
 			
 			gridLayout.addView(viewIngredient);
-		    Log.d("app",entry.getKey() + "/" + entry.getValue());
 		}
 
 		return view;

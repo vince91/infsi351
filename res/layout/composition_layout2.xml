@@ -3,7 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center_horizontal" >
+    android:gravity="center" >
 
     <TextView
         android:id="@+id/choix_garniture"
@@ -16,7 +16,8 @@
     <LinearLayout
         android:id="@+id/linear"
         android:layout_width="match_parent"
-        android:layout_height="fill_parent" 
+        android:layout_height="wrap_content" 
+       	android:gravity="center"
         android:orientation="horizontal">
 
         <GridLayout
@@ -31,7 +32,26 @@
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center" >
+
+        <Button
+            android:id="@+id/buttonRevenirBase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bouton_revenir_base" />
+
+        <Button
+            android:id="@+id/buttonConfirmerPizza"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bouton_confirmer" />
+
     </LinearLayout>
 
 </LinearLayout>
