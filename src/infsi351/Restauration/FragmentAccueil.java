@@ -27,6 +27,7 @@ public class FragmentAccueil extends Fragment {
 	private static final int NUM_PAGES = 5;
 	private ViewPager mPager;
 	private PagerAdapter mPagerAdapter;
+	private Timer timer;
 
 	public FragmentAccueil() {
 	}
@@ -43,13 +44,19 @@ public class FragmentAccueil extends Fragment {
 		mPager = (ViewPager) view.findViewById(R.id.pager);
         mPagerAdapter = new ScreenSlidePagerAdapter( ((MainActivity) getActivity()).getSupportFragmentManager());
         mPager.setAdapter(mPagerAdapter);
-
         
-		
+	
 		return view;
-		
+
+	
 	}
 	
+	@Override
+	public void onDestroyView() {
+		super.onDestroyView();
+		timer.cancel();
+	}
+	 
 	private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
         public ScreenSlidePagerAdapter(android.support.v4.app.FragmentManager fm) {
             super(fm);
@@ -83,7 +90,6 @@ public class FragmentAccueil extends Fragment {
             return NUM_PAGES;
         }
         
-        Timer timer;
         int page = 0;
 
         public void pageSwitcher(int seconds) {
