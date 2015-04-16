@@ -25,21 +25,20 @@ public class FragmentServeur extends Fragment {
 		// Create a new TextView and set its text to the fragment's section
 		// number argument value.
 		
-		View view = inflater.inflate(R.layout.aprescommande_fragment, container, false);
+		View view = inflater.inflate(R.layout.serveur_fragment, container, false);
 		
 		final Button button_eau = (Button) view.findViewById(R.id.button_eau);
         button_eau.setOnClickListener(new View.OnClickListener() {
-           
         	public void onClick(View v) {
             	
             	AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-            	builder.setMessage("Voulez-vous du pain?").setTitle("Pain");
-            	builder.setPositiveButton("Oui", new DialogInterface.OnClickListener() {
+            	builder.setMessage("Voulez-vous une caraffe d'eau?").setTitle("Eau");
+            	builder.setPositiveButton("Oui,svp!", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // User clicked OK button
                     }
                 });
-            	builder.setNegativeButton("No, merci", new DialogInterface.OnClickListener() {
+            	builder.setNegativeButton("No, merci!", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // User cancelled the dialog
                     }
@@ -50,11 +49,33 @@ public class FragmentServeur extends Fragment {
          // Create the AlertDialog
          		AlertDialog dialog = builder.create();
          		dialog.show();
-
-           	 
-           	
             }
-        });   
+        });
+        
+        final Button button_pain = (Button) view.findViewById(R.id.button_pain);
+        button_pain.setOnClickListener(new View.OnClickListener() {
+        	public void onClick(View v) {
+            	
+            	AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+            	builder.setMessage("Voulez-vous du pain?").setTitle("Pain");
+            	builder.setPositiveButton("Oui,svp!", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // User clicked OK button
+                    }
+                });
+            	builder.setNegativeButton("No, merci!", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // User cancelled the dialog
+                    }
+                });
+         // Set other dialog properties
+         //...
+
+         // Create the AlertDialog
+         		AlertDialog dialog = builder.create();
+         		dialog.show();
+            }
+        });
 		
 		
 		

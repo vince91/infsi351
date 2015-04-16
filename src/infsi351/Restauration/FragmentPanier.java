@@ -29,9 +29,12 @@ public class FragmentPanier extends Fragment {
 		// Create a new TextView and set its text to the fragment's section
 		// number argument value.
 		
+		
 		MainActivity main = (MainActivity)getActivity();
 		
 		View view = inflater.inflate(R.layout.panier, container, false);
+		
+		
 		View content_cart = view.findViewById(R.id.cart_content);
 		View content_drinks = view.findViewById(R.id.drink_content);
 		
@@ -100,5 +103,8 @@ public class FragmentPanier extends Fragment {
 		((TextView)view.findViewById(R.id.total_cart)).setText(total + " €");
 		
 		return view;
+		
+		
 	}
+	
 }
