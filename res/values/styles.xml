@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
@@ -11,10 +11,59 @@
             backward-compatibility can go here.
         -->
     </style>
+    
+    
 
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+        <item name="android:actionBarStyle">@style/AppTheme.ActionBar</item>
+        <item name="android:actionBarTabTextStyle">@style/AppTheme.ActionBar.TabStyle</item>
+        <item name="android:actionBarTabStyle">@style/AppTheme.ActionBar.TabView</item>
+    </style>
+    
+    <style name="AppTheme.ActionBar" parent="@style/android:Widget.ActionBar">
+        <item name="android:background">#A6A93C</item>
+        <item name="android:height">60dp</item>
+        <item name="android:displayOptions">showTitle</item>
+        <item name="android:titleTextStyle">@style/AppTheme.ActionBar.textStyle</item>
+    </style>
+    
+    <style name="AppTheme.ActionBar.TabStyle" parent="@style/android:Widget.ActionBar.TabText">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#F8F4DB</item>
+    </style>
+    
+    <style name="AppTheme.ActionBar.TabView" parent="@style/android:Widget.ActionBar.TabView">
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:background">#A6A93C</item>
+        <item name="android:paddingStart">4dip</item>
+        <item name="android:paddingEnd">4dip</item>
+    </style>
+    
+    <style name="AppTheme.ActionBar.textStyle">
+        <item name="android:background">#A6A93C</item>
+        <item name="android:textColor">#F8F4DB</item>
+        <item name="android:textSize">25sp</item>
+    </style>
+    
+    <style name="background">
+        <item name="android:background">#F8F4DB</item>
+    </style>
+    
+    <style name="green" parent="@android:style/TextAppearance">
+        <item name="android:textSize">40sp</item>
+        <item name="android:textColor">#A6A93C</item>
+    </style>
+    
+    <style name="red" parent="@android:style/TextAppearance">
+        <item name="android:textSize">50sp</item>
+        <item name="android:textColor">#C60751</item>
+    </style>
+    
+    <style name="redish" parent="@android:style/TextAppearance">
+        <item name="android:textColor">#C60751</item>
+        <item name="android:textSize">20sp</item>
     </style>
 
 </resources>
