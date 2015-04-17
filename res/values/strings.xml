@@ -56,6 +56,7 @@
     <string name="bouton_revenir_base">&lt; Changer la base de la pizza</string>
     <string name="bouton_confirmer">Confirmer la pizza &gt;</string>
     <string name="cart_empty_item_text">Vide</string>
+    <string name="counter_value">1000000</string>
 
 
 </resources>

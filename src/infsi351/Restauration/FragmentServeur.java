@@ -20,12 +20,12 @@ public class FragmentServeur extends Fragment {
 	}
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		// Create a new TextView and set its text to the fragment's section
 		// number argument value.
 		
 		View view = inflater.inflate(R.layout.serveur_fragment, container, false);
+		final View view_toilettes = inflater.inflate(R.layout.toilettes_fragment, container, false);
 		
 		final Button button_eau = (Button) view.findViewById(R.id.button_eau);
         button_eau.setOnClickListener(new View.OnClickListener() {
@@ -33,9 +33,13 @@ public class FragmentServeur extends Fragment {
             	
             	AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
             	builder.setMessage("Voulez-vous une caraffe d'eau?").setTitle("Eau");
-            	builder.setPositiveButton("Oui,svp!", new DialogInterface.OnClickListener() {
+            	builder.setPositiveButton("Oui, svp!", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        // User clicked OK button
+                    	AlertDialog.Builder builder_confirm = new AlertDialog.Builder(getActivity());
+                    	builder_confirm.setMessage("Une caraffe d'eau arrivera bientot").setTitle("Eau commandé");
+                    	AlertDialog dialog_confirm = builder_confirm.create();
+                    	dialog.dismiss();
+                 		dialog_confirm.show();
                     }
                 });
             	builder.setNegativeButton("No, merci!", new DialogInterface.OnClickListener() {
@@ -43,9 +47,6 @@ public class FragmentServeur extends Fragment {
                         // User cancelled the dialog
                     }
                 });
-         // Set other dialog properties
-         //...
-
          // Create the AlertDialog
          		AlertDialog dialog = builder.create();
          		dialog.show();
@@ -58,9 +59,13 @@ public class FragmentServeur extends Fragment {
             	
             	AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
             	builder.setMessage("Voulez-vous du pain?").setTitle("Pain");
-            	builder.setPositiveButton("Oui,svp!", new DialogInterface.OnClickListener() {
+            	builder.setPositiveButton("Oui, svp!", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        // User clicked OK button
+                    	AlertDialog.Builder builder_confirm = new AlertDialog.Builder(getActivity());
+                    	builder_confirm.setMessage("Du pain arrivera bientot").setTitle("Pain commandé");
+                    	AlertDialog dialog_confirm = builder_confirm.create();
+                    	dialog.dismiss();
+                 		dialog_confirm.show();
                     }
                 });
             	builder.setNegativeButton("No, merci!", new DialogInterface.OnClickListener() {
@@ -68,16 +73,36 @@ public class FragmentServeur extends Fragment {
                         // User cancelled the dialog
                     }
                 });
-         // Set other dialog properties
-         //...
-
          // Create the AlertDialog
          		AlertDialog dialog = builder.create();
          		dialog.show();
             }
         });
 		
+        final Button button_serveur = (Button) view.findViewById(R.id.button_serveur);
+        button_serveur.setOnClickListener(new View.OnClickListener() {
+        	public void onClick(View v) {
+            	AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+            	builder.setMessage("Un serveur arrivera bientot à votre table!").setTitle("Serveur coming soon");
+         // Create the AlertDialog
+         		AlertDialog dialog = builder.create();
+         		dialog.show();
+            }
+        });
+        
+        final Button button_toilette = (Button) view.findViewById(R.id.button_toilettes);
+        button_toilette.setOnClickListener(new View.OnClickListener() {
+        	public void onClick(View v) {
+        		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+            	builder.setMessage("Voilà le plan pour arriver à les toilettes:").setTitle("Carte toilettes");
+            	builder.setView(view_toilettes);
+         // Create the AlertDialog
+         		AlertDialog dialog = builder.create();
+         		dialog.show();
+            }
+        });
+        
 		
-		
-		return view ;	}
+		return view ;	
+	}
 }
