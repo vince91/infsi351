@@ -3,7 +3,8 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:gravity="center"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    style="@style/background" >
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -20,6 +21,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
     
     <TextView
+        style="@style/redish"
         android:id="@+id/cart_price_item"
         android:layout_width="wrap_content"
         android:layout_height="fill_parent"

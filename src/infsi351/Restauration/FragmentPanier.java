@@ -8,7 +8,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -41,13 +40,13 @@ public class FragmentPanier extends Fragment {
 		List<Boisson> drink_list = main.commande.get_liste_boissons();
 		List<Pizza> pizza_list = main.commande.get_liste_pizzas();
 		
-		double total = 0;
+		float total = 0.0f;
 		
 		if(drink_list.size() > 0){
 			for(int i =0; i < drink_list.size(); i ++){
 				View item_drink = inflater.inflate(R.layout.drink_item, (ViewGroup) content_drinks, false);
 				((TextView)item_drink.findViewById(R.id.cart_text_item)).setText(drink_list.get(i).getNom());
-				((TextView)item_drink.findViewById(R.id.cart_price_item)).setText(drink_list.get(i).getPrix() + "€");
+				((TextView)item_drink.findViewById(R.id.cart_price_item)).setText(drink_list.get(i).getPrix() + "â‚¬");
 				
 				Button btn_delete = (Button) item_drink.findViewById(R.id.button_delete_item);
 				btn_delete.setId(i);
@@ -76,7 +75,7 @@ public class FragmentPanier extends Fragment {
 				View item_cart = inflater.inflate(R.layout.cart_item, (ViewGroup) content_cart, false);
 				((TextView)item_cart.findViewById(R.id.cart_text_item)).setText("Pizza base " + pizza_list.get(i).getBase());
 				((TextView)item_cart.findViewById(R.id.item_description)).setText(pizza_list.get(i).getIngredient().toString());
-				((TextView)item_cart.findViewById(R.id.cart_price_item)).setText((i+1)*10 + "€");
+				((TextView)item_cart.findViewById(R.id.cart_price_item)).setText(pizza_list.get(i).getPrix() + " â‚¬");
 				
 				Button btn_delete = (Button) item_cart.findViewById(R.id.button_delete_item);
 				btn_delete.setId(i);
@@ -91,7 +90,7 @@ public class FragmentPanier extends Fragment {
 				});
 				
 				((LinearLayout)content_cart).addView(item_cart);
-				total += (i+1)*10;
+				total += pizza_list.get(i).getPrix();
 			}
 		}
 		else {
@@ -100,7 +99,7 @@ public class FragmentPanier extends Fragment {
 			((LinearLayout)content_cart).addView(item_cart);
 		}
 		
-		((TextView)view.findViewById(R.id.total_cart)).setText(total + " €");
+		((TextView)view.findViewById(R.id.total_cart)).setText(total + " â‚¬");
 		
 		return view;
 		
