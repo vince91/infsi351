@@ -42,7 +42,7 @@
     <string name="button_serveur">Appel Serveur</string>
     <string name="button_toilettes">Toilettes</string>
     <string name="eau_message">Quantité:</string>
-    <string name="merci_message">Merci! Commande enregistré.</string>
+    <string name="merci_message">Merci !</string>
     <string name="chronom_message">Temps d\'attente:</string>
     <string name="button_addition">Demander l\'addition</string>
     <string name="button_camera">Voir la cusine</string>
@@ -57,6 +57,9 @@
     <string name="bouton_confirmer">Confirmer la pizza &gt;</string>
     <string name="cart_empty_item_text">Vide</string>
     <string name="counter_value">1000000</string>
+    <string name="image_chron">Chronometer</string>
+    <string name="votre_commande_message">Commande enregistrée!</string>
+    <string name="serveur_operation_message">Choisissez une operation...</string>
 
 
 </resources>
