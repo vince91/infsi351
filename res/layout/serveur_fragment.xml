@@ -47,11 +47,7 @@
         	android:layout_gravity="center"
         	android:text="@string/button_serveur"
         	android:drawableTop="@drawable/icon_serveur"/>
-	    
-    </TableRow>
-    <TableRow 
-        android:layout_width="match_parent"
-		android:layout_height="match_parent">
+	  
         <Button
         	android:id="@+id/button_pain"
         	android:layout_width="150dp"

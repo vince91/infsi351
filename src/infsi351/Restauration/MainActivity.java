@@ -136,6 +136,16 @@ public class MainActivity extends FragmentActivity implements
 		fragmentTransaction.commit();
 	}
 	
+	public void voir_addition(View v){
+		Fragment fragment = new FragmentAddition();
+		android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+		fragmentTransaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_to_right);
+		fragmentTransaction.replace(R.id.container, fragment);
+		fragmentTransaction.commit();
+	}
+	
+	
+	
 	public Pizza getPizza() {
 		return pizza;
 	}
