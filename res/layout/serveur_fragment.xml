@@ -26,57 +26,38 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:orientation="horizontal" >
+        
         <Button 
-       		android:id="@+id/button_eau"
-        	android:layout_width="150dp"
-        	android:layout_height="150dp"
-        	android:layout_marginBottom="10dp"
-        	android:layout_marginLeft="40dp"
-        	android:layout_marginRight="20dp"
-        	android:layout_marginTop="10dp" 
+       		android:id="@+id/button_eau" 
         	android:layout_gravity="center_vertical"
         	android:layout_weight="1"
         	android:text="@string/button_eau"
-			android:drawableTop="@drawable/icon_caraffe"  /> 
+			android:drawableTop="@drawable/soda_bottle"  
+			style="@style/button_text" /> 
 	
 		<Button 
         	android:id="@+id/button_pain"
-        	android:layout_width="150dp"
-        	android:layout_height="150dp"
-        	android:layout_marginBottom="10dp"
-        	android:layout_marginLeft="20dp"
-        	android:layout_marginRight="20dp"
-        	android:layout_marginTop="10dp" 
         	android:layout_gravity="center_vertical"
         	android:layout_weight="1"
        		android:text="@string/button_pain"
-        	android:drawableTop="@drawable/icon_bread" />
+        	android:drawableTop="@drawable/bread" 
+        	style="@style/button_text"/>
 	
         <Button 
-        	android:id="@+id/button_serveur"
-        	android:layout_width="150dp"
-        	android:layout_height="150dp"
-        	android:layout_marginBottom="10dp"
-        	android:layout_marginLeft="20dp"
-        	android:layout_marginRight="20dp"
-        	android:layout_marginTop="10dp" 
+        	android:id="@+id/button_serveur" 
         	android:layout_gravity="center_vertical"
         	android:layout_weight="1"
         	android:text="@string/button_serveur"
-        	android:drawableTop="@drawable/icon_serveur"/>
+        	android:drawableTop="@drawable/waiter"
+        	style="@style/button_text"/>
         
         <Button 
         	android:id="@+id/button_toilettes"
-       		android:layout_width="150dp"
-        	android:layout_height="150dp"
-        	android:layout_marginBottom="10dp"
-        	android:layout_marginLeft="20dp"
-        	android:layout_marginRight="40dp"
-        	android:layout_marginTop="10dp" 
         	android:layout_gravity="center_vertical"
         	android:layout_weight="1"
         	android:text="@string/button_toilettes"
-        	android:drawableTop="@drawable/icon_toilettes"/>
+        	android:drawableTop="@drawable/hot_tube"
+        	style="@style/button_text"/>
         </LinearLayout>
         
      
