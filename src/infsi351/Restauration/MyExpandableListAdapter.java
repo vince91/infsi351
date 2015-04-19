@@ -42,7 +42,7 @@ public class MyExpandableListAdapter extends BaseExpandableListAdapter {
       convertView = inflater.inflate(R.layout.listeboissons_details, null);
     }
     text = (TextView) convertView.findViewById(R.id.textView1);
-    text.setText(children.getNom());
+    text.setText(children.getNom() + " " + children.getPrix() + "€");
     convertView.setOnClickListener(new OnClickListener() {
       @Override
       public void onClick(View v) {
