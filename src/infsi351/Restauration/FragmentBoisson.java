@@ -84,47 +84,73 @@ public class FragmentBoisson extends Fragment {
 		groups.append(0, champagnes);
 
 
-		//Le groupe des vins
+		//Le groupe des vins blancs
 		Group vins = new Group("Nos Vins Blancs");
 		Boisson pouilly = new Boisson("AOC Pouilly-Fumé");
-		champagnes.children.add(pouilly);
+		vins.children.add(pouilly);
 		Boisson riesling = new Boisson("AOC Riesling Grand Cru");
-		champagnes.children.add(riesling);
+		vins.children.add(riesling);
 		Boisson saumur = new Boisson("AOC Saumur");
-		champagnes.children.add(saumur);
+		vins.children.add(saumur);
 		Boisson bellet = new Boisson("AOC Bellet");
-		champagnes.children.add(bellet);
-		
+		vins.children.add(bellet);
+
 		groups.append(1, vins);
+
+		//Le groupe des vins rouges
+		Group vinsrouges = new Group("Nos Vins Rouges");
+		Boisson stemilion = new Boisson("AOC Saint-Emilion Grand Cru");
+		vinsrouges.children.add(stemilion);
+		Boisson saumurchampigny = new Boisson("AOC Saumur Champigny");
+		vinsrouges.children.add(saumurchampigny);
+		Boisson chateuneuf = new Boisson("AOC Châteauneuf-du-Pape");
+		vinsrouges.children.add(chateuneuf);
+		Boisson cahors = new Boisson("AOC Cahors");
+		vinsrouges.children.add(cahors);
+		
+
+		groups.append(2, vinsrouges);
 		
 
 
 		//Le groupe des cocktails et aperos
 		Group cocktails = new Group("Nos Cocktails et Nos Apéritifs");
-		for (int i = 0; i < 5; i++) {
-			Boisson cock = new Boisson("Cocktail " + i);
-			//bieres.children.add("Sub Item" + i);
-			cocktails.children.add(cock);
-		}
-		groups.append(2, cocktails);
+		Boisson kirroyal = new Boisson("Kir Royal");
+		cocktails.children.add(kirroyal);
+		Boisson porto = new Boisson("Porto");
+		cocktails.children.add(porto);
+		Boisson tipunch = new Boisson("Ti Punch");
+		cocktails.children.add(tipunch);
+		Boisson sangria = new Boisson("Sangria");
+		cocktails.children.add(sangria);
+		
+		groups.append(3, cocktails);
 		
 		//Le groupe des bières
 		Group bieres = new Group("Nos Bières");
-		for (int i = 0; i < 5; i++) {
-			Boisson biere = new Boisson("Bière " + i);
-			//bieres.children.add("Sub Item" + i);
-			bieres.children.add(biere);
-		}
-		groups.append(3, bieres);
+		Boisson leffe = new Boisson("Leffe");
+		bieres.children.add(leffe);
+		Boisson guinnessambree = new Boisson("Guinness Ambrée");
+		bieres.children.add(guinnessambree);
+		Boisson carlsbergElephant = new Boisson("Carlsberg Elephant");
+		bieres.children.add(carlsbergElephant);
+		Boisson delirium = new Boisson("Delirium");
+		bieres.children.add(delirium);
+		
+		groups.append(4, bieres);
 
 		//Le groupe des softs
 		Group softs = new Group("Nos Jus et Nos Sodas");
-		for (int i = 0; i < 5; i++) {
-			Boisson soft = new Boisson("Soft " + i);
-			//bieres.children.add("Sub Item" + i);
-			softs.children.add(soft);
-		}
-		groups.append(4, softs);
+		Boisson coca = new Boisson("Coca-Cola");
+		softs.children.add(coca);
+		Boisson icetea = new Boisson("Iced Tea");
+		softs.children.add(icetea);
+		Boisson jusorange = new Boisson("Jus d'orange");
+		softs.children.add(jusorange);
+		Boisson jusananas = new Boisson("Jus d'ananas");
+		softs.children.add(jusananas);
+		
+		groups.append(5, softs);
 				
 				
 	}

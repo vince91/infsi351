@@ -113,8 +113,8 @@ public class FragmentAccueil extends Fragment {
                         if (page > 4) { // In my case the number of pages are 5
                             timer.cancel();
                             // Showing a toast for just testing purpose
-                            Toast.makeText(((MainActivity) getActivity()).getApplicationContext(), "Timer stoped",
-                                    Toast.LENGTH_LONG).show();
+//                            Toast.makeText(((MainActivity) getActivity()).getApplicationContext(), "Timer stoped",
+//                                    Toast.LENGTH_LONG).show();
                         } else {
                             mPager.setCurrentItem(page++);
                         }
