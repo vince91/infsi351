@@ -45,7 +45,7 @@ public class FragmentComposition2 extends Fragment {
 		final Button button_retour = (Button) view.findViewById(R.id.buttonRevenirBase);
         button_retour.setOnClickListener(new View.OnClickListener() {
              public void onClick(View v) {
-            	 ((MainActivity) getActivity()).backToComposition1();
+            	 ((MainActivity) getActivity()).switchToComposition1(true);
              }
          });
         
@@ -53,6 +53,7 @@ public class FragmentComposition2 extends Fragment {
         button_valider.setOnClickListener(new View.OnClickListener() {
              public void onClick(View v) {
             	 mainActivity.validerPizza();
+            	 ((MainActivity) getActivity()).switch_tab_to_boisson(null);
             	 Log.d("app", pizza.getBase() + "-" + pizza.getIngredient() + " " + pizza.getPrix() + "euros");
              }
          });
@@ -78,7 +79,6 @@ public class FragmentComposition2 extends Fragment {
 				button.setText(ingredientString);
 				button.setTextOff(ingredientString);
 				button.setTextOn(ingredientString);
-				button.setWidth((int)(100 * density));
 				ingredientGrid.addView(button);
 				
 				if (pizza.checkIngredient(ingredient))

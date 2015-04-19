@@ -111,7 +111,7 @@ public class FragmentPanier extends Fragment {
 						MainActivity main = (MainActivity)getActivity();
 						main.setPizza(main.commande.get_liste_pizzas().get(((View)v.getParent()).getId()));
 						main.commande.delete_pizza_of_the_list(((View)v.getParent()).getId());
-						main.backToComposition1();
+						main.switchToComposition1(true);
 					}
 				});
 				

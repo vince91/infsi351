@@ -51,13 +51,15 @@
             android:id="@+id/buttonRevenirBase"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/bouton_revenir_base" />
+            android:text="@string/bouton_revenir_base"
+            style="@style/button1" />
 
         <Button
             android:id="@+id/buttonConfirmerPizza"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/bouton_confirmer" />
+            android:text="@string/bouton_confirmer" 
+            style="@style/button1" />
 
     </LinearLayout>
 
