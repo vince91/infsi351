@@ -15,10 +15,10 @@ public class MyExpandableListAdapter extends BaseExpandableListAdapter {
 
   private final SparseArray<Group> groups;
   public LayoutInflater inflater;
-  public Activity activity;
+  public MainActivity activity;
 
   public MyExpandableListAdapter(Activity act, SparseArray<Group> groups) {
-    activity = act;
+    activity = (MainActivity)act;
     this.groups = groups;
     inflater = act.getLayoutInflater();
   }
@@ -46,8 +46,10 @@ public class MyExpandableListAdapter extends BaseExpandableListAdapter {
     convertView.setOnClickListener(new OnClickListener() {
       @Override
       public void onClick(View v) {
-        Toast.makeText(activity, children.getNom(),
-            Toast.LENGTH_SHORT).show();
+//        Toast.makeText(activity, children.getNom(),
+//            Toast.LENGTH_SHORT).show();
+    	  activity.commande.add_boisson(children);
+
       }
     });
     return convertView;
