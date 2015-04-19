@@ -2,8 +2,11 @@ package infsi351.Restauration;
 
 import java.net.URI;
 
+import android.app.ActionBar.LayoutParams;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.graphics.PixelFormat;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnPreparedListener;
 import android.net.Uri;
@@ -14,6 +17,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.MediaController;
 import android.widget.TextView;
@@ -26,6 +31,11 @@ public class FragmentApresCommande extends Fragment {
 	 */
 	public static final String ARG_SECTION_NUMBER = "section_number";
 	public boolean prete;
+	private VideoView myVideoView;
+	private int position = 0;
+	private ProgressDialog progressDialog;
+	private MediaController mediaControls;
+
 	
 	public FragmentApresCommande() {
 		prete=false;
@@ -75,6 +85,52 @@ public class FragmentApresCommande extends Fragment {
             }
         });
         
+      //BUTTON video
+      	final Button button_video = (Button) view.findViewById(R.id.button_camera);
+      	button_video.setOnClickListener(new View.OnClickListener() {
+      		public void onClick(View v) {
+      			final Dialog dialog = new Dialog(getActivity());// add here your class name
+      		    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+      		    dialog.setContentView(R.layout.video_fragment);//add your own xml with defied with and height of videoview
+      		    dialog.show();
+      		    WindowManager.LayoutParams lp = new WindowManager.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+      		    lp.copyFrom(dialog.getWindow().getAttributes());
+      			dialog.getWindow().setAttributes(lp);
+      			
+      			if (mediaControls == null) {
+      				mediaControls = new MediaController(mainActivity);
+      			}
+      			
+      			final VideoView videoView = (VideoView) dialog.findViewById(R.id.video_view);
+          		//Uri uri = Uri.parse("android.resource://"+mainActivity.getPackageName()+"/"+R.raw.video_pizza);
+      			String path = "https://www.youtube.com/watch?v=eqNrYViVXe8";
+      			Uri uri = Uri.parse(path);
+          		videoView.setVideoURI(uri);
+          		videoView.setMediaController(mediaControls);
+          		videoView.requestFocus();
+          		
+          		videoView.setOnPreparedListener(new OnPreparedListener() {
+          			public void onPrepared(MediaPlayer mediaPlayer) {
+          			// close the progress bar and play the video
+	          			progressDialog.dismiss();
+          			//if we have a position on savedInstanceState, the video playback should start from here
+	          			videoView.seekTo(position);
+	          			if (position == 0) {
+	          				myVideoView.start();
+	          			} else {
+          			//if we come from a resumed activity, video playback will be paused
+	          				myVideoView.pause();
+	          			}
+          			}
+          		});
+          		
+          		
+          		videoView.start();
+      			
+            }
+     
+        });
+              
 		return view ;
 	}
 	
