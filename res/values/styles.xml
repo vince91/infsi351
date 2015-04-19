@@ -44,6 +44,9 @@
     
     <style name="AppTheme.ActionBar.TabView" parent="@style/android:Widget.ActionBar.TabView">
         <item name="android:background">@drawable/actionbar_tab_indicator</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:paddingStart">6dip</item>
+        <item name="android:paddingEnd">6dip</item>
     </style>
     
     <style name="AppTheme.ActionBar.textStyle">
@@ -56,7 +59,33 @@
     </style>
     
     <style name="button1" parent="@android:style/Widget.Button">
-        <item name="android:textColor">@color/background</item>
+        <item name="android:textColor">@drawable/button1_text</item>
+        <item name="android:layout_width" >wrap_content</item>
+    	<item name="android:layout_height" >wrap_content</item>
+    	<item name="android:gravity" >center</item>
+    	<item name="android:layout_margin" >3dp</item>
+    	<item name="android:textSize" >20sp</item>
+        <item name="android:background">@drawable/button1</item>
+    </style>
+    
+    <style name="button2" parent="@android:style/Widget.Button">
+        <item name="android:textColor">@drawable/button2_text</item>
+        <item name="android:layout_width" >wrap_content</item>
+    	<item name="android:layout_height" >wrap_content</item>
+    	<item name="android:gravity" >center</item>
+    	<item name="android:layout_margin" >3dp</item>
+    	<item name="android:textSize" >20sp</item>
+        <item name="android:background">@drawable/button2</item>
+    </style>
+    
+    <style name="toggleButton" parent="@android:style/Widget.Button.Toggle">
+        <item name="android:textColor">@drawable/toggle_button_text</item>
+        <item name="android:layout_width" >wrap_content</item>
+    	<item name="android:layout_height" >wrap_content</item>
+    	<item name="android:gravity" >center</item>
+    	<item name="android:layout_margin" >3dp</item>
+    	<item name="android:textSize" >20sp</item>
+        <item name="android:background">@drawable/toggle_button</item>
     </style>
     
     <style name="green" parent="@android:style/TextAppearance">
