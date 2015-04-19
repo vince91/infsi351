@@ -46,6 +46,12 @@ public class Pizza {
 		prix = 0.0f;
 	}
 	
+	public Pizza(Pizza another) {
+		base = another.base;
+		prix = another.prix;
+		ingredients = another.ingredients;
+	}
+	
 	public void ajouterIngredient(String ingredient) {
 		ingredients.add(ingredient);
 		prix += prixIngredients.get(ingredient);
