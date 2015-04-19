@@ -29,7 +29,7 @@
         
         <RelativeLayout 
         	android:layout_width="wrap_content"
-        	android:layout_height="wrap_content"
+        	android:layout_height="match_parent"
   			android:orientation="vertical" 
   			android:layout_gravity="center"
   			android:layout_weight="1"
@@ -40,16 +40,16 @@
  				android:layout_height="wrap_content" 
  				android:layout_width="wrap_content"
         		android:layout_centerHorizontal="true"
-        		android:src="@drawable/icon_chronom" 
-        		android:contentDescription="@+string/image_chron" />
+        		android:contentDescription="@+string/image_chron" 
+        		android:src="@drawable/clock" />
 	        
 	        <TextView android:id="@+id/chronom_message"
         		android:layout_width="wrap_content"
         		android:layout_height="wrap_content"
         		android:layout_centerHorizontal="true"
         		android:gravity="center"
-       			android:layout_below="@id/chronom_img"
-       			android:text="@string/chronom_message" />
+       			android:text="@string/chronom_message"
+       			android:layout_below="@id/chronom_img" />
 	       
 			<TextView android:id="@+id/counter_value"
        			android:layout_width="wrap_content"
@@ -62,27 +62,19 @@
 	   
 	    <Button
        		android:id="@+id/button_camera"
-        	android:layout_width="150dp"
-        	android:layout_height="150dp"
-        	android:layout_marginBottom="10dp"
-        	android:layout_marginLeft="10dp"
-        	android:layout_marginRight="10dp"
-        	android:layout_marginTop="10dp" 
         	android:layout_gravity="center_vertical"
         	android:layout_weight="1"
-        	android:text="@string/button_camera"/> 
+        	android:text="@string/button_camera"
+        	android:drawableTop="@drawable/screenshot"
+        	style="@style/button_text"/> 
         	
 	    <Button
        		android:id="@+id/button_addition"
-        	android:layout_width="150dp"
-        	android:layout_height="150dp"
-        	android:layout_marginBottom="10dp"
-        	android:layout_marginLeft="10dp"
-        	android:layout_marginRight="10dp"
-        	android:layout_marginTop="10dp" 
         	android:layout_gravity="center_vertical"
         	android:layout_weight="1"
-        	android:text="@string/button_addition" />
+        	android:text="@string/button_addition" 
+        	android:drawableTop="@drawable/card_in_use"
+        	style="@style/button_text"/>
 	    
     </LinearLayout>
     

@@ -65,5 +65,18 @@
         <item name="android:textColor">#C60751</item>
         <item name="android:textSize">20sp</item>
     </style>
+    
+    <style name="button_text" >
+        <item name="android:layout_width" >150dp</item>
+   		<item name="android:layout_height" >150dp</item>
+	   	<item name="android:textColor" >#C60751</item>
+	   	<item name="android:layout_margin" >30dp</item>
+    	<item name="android:textSize" >20sp</item>
+    	<item name="android:textStyle" >bold</item>
+    	<item name="android:alpha" >0.7</item>
+    	<item name="android:background" >#A6A93C</item>
+    	<item name="android:padding" >10dp</item>
+  	</style>
+  
 
 </resources>
