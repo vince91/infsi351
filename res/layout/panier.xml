@@ -87,6 +87,7 @@
      </LinearLayout>
      
 	<Button
+	    	style="@style/button1"
 	        android:id="@+id/button_confirm_order"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"

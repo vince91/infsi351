@@ -33,12 +33,14 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
+        style="@style/button2"
         android:id="@+id/button_modify_item"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/modify_item" />
     
     <Button
+        style="@style/button2"
         android:id="@+id/button_delete_item"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
