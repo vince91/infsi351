@@ -8,11 +8,13 @@ import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.view.ViewParent;
 
 public class MainActivity extends FragmentActivity implements
 		ActionBar.TabListener {
 
 	public Commande commande;
+	public Boolean commande_validee;
 	/**
 	 * The serialization (saved instance state) Bundle key representing the
 	 * current tab position.
@@ -26,6 +28,7 @@ public class MainActivity extends FragmentActivity implements
 		setContentView(R.layout.activity_main);
 		
 		commande = new Commande();
+		commande_validee = false;
 
 		// Set up the action bar to show tabs.
 		final ActionBar actionBar = getActionBar();
@@ -87,8 +90,10 @@ public class MainActivity extends FragmentActivity implements
 			frag = new FragmentBoisson();
 		else if (tab_num == 3)
 			frag = new FragmentServeur();
-		else
-			frag = new FragmentPanier();
+		else{
+			if(!commande_validee){frag = new FragmentPanier();}
+			else{frag = new FragmentApresCommande();}
+		}
 		
 		getSupportFragmentManager().beginTransaction()
 				.replace(R.id.container, frag).commit();
@@ -134,6 +139,39 @@ public class MainActivity extends FragmentActivity implements
 		fragmentTransaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_to_right);
 		fragmentTransaction.replace(R.id.container, fragment);
 		fragmentTransaction.commit();
+		commande_validee = true;
+	}
+	
+	public void switch_tab_to_panier(View v){
+		Fragment fragment = new FragmentPanier();
+		android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+		fragmentTransaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_to_right);
+		fragmentTransaction.replace(R.id.container, fragment);
+		fragmentTransaction.commit();
+	}
+	
+	public void switch_tab_to_composition(View v){
+		Fragment fragment = new FragmentComposition1();
+		android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+		fragmentTransaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_to_right);
+		fragmentTransaction.replace(R.id.container, fragment);
+		fragmentTransaction.commit();
+	}
+	
+	public void switch_tab_to_garcon(View v){
+		Fragment fragment = new FragmentServeur();
+		android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+		fragmentTransaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_to_right);
+		fragmentTransaction.replace(R.id.container, fragment);
+		fragmentTransaction.commit();
+	}
+	
+	public void switch_tab_to_boisson(View v){
+		Fragment fragment = new FragmentBoisson();
+		android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+		fragmentTransaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_to_right);
+		fragmentTransaction.replace(R.id.container, fragment);
+		fragmentTransaction.commit();
 	}
 	
 	public void voir_addition(View v){
@@ -144,7 +182,9 @@ public class MainActivity extends FragmentActivity implements
 		fragmentTransaction.commit();
 	}
 	
-	
+	public void setPizza(Pizza p){
+		pizza = p;
+	}
 	
 	public Pizza getPizza() {
 		return pizza;

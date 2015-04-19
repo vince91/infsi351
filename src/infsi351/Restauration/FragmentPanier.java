@@ -46,7 +46,7 @@ public class FragmentPanier extends Fragment {
 			for(int i =0; i < drink_list.size(); i ++){
 				View item_drink = inflater.inflate(R.layout.drink_item, (ViewGroup) content_drinks, false);
 				((TextView)item_drink.findViewById(R.id.cart_text_item)).setText(drink_list.get(i).getNom());
-				((TextView)item_drink.findViewById(R.id.cart_price_item)).setText(drink_list.get(i).getPrix() + "â‚¬");
+				((TextView)item_drink.findViewById(R.id.cart_price_item)).setText(drink_list.get(i).getPrix() + "€");
 				
 				Button btn_delete = (Button) item_drink.findViewById(R.id.button_delete_item);
 				btn_delete.setId(i);
@@ -75,17 +75,31 @@ public class FragmentPanier extends Fragment {
 				View item_cart = inflater.inflate(R.layout.cart_item, (ViewGroup) content_cart, false);
 				((TextView)item_cart.findViewById(R.id.cart_text_item)).setText("Pizza base " + pizza_list.get(i).getBase());
 				((TextView)item_cart.findViewById(R.id.item_description)).setText(pizza_list.get(i).getIngredient().toString());
-				((TextView)item_cart.findViewById(R.id.cart_price_item)).setText(pizza_list.get(i).getPrix() + " â‚¬");
+				((TextView)item_cart.findViewById(R.id.cart_price_item)).setText(pizza_list.get(i).getPrix() + " €");
+				
+				View item_du_panier = item_cart.findViewById(R.id.item_du_panier);
+				item_du_panier.setId(i);
 				
 				Button btn_delete = (Button) item_cart.findViewById(R.id.button_delete_item);
-				btn_delete.setId(i);
 				btn_delete.setOnClickListener(new View.OnClickListener() {
 					
 					@Override
 					public void onClick(View v) {
 						MainActivity main = (MainActivity)getActivity();
-						main.commande.delete_pizza_of_the_list(v.getId());
+						main.commande.delete_pizza_of_the_list(((View)v.getParent()).getId());
 						main.refresh_da_panier();
+					}
+				});
+				
+				Button btn_modify = (Button) item_cart.findViewById(R.id.button_modify_item);
+				btn_modify.setOnClickListener(new View.OnClickListener() {
+					
+					@Override
+					public void onClick(View v) {
+						MainActivity main = (MainActivity)getActivity();
+						main.setPizza(main.commande.get_liste_pizzas().get(((View)v.getParent()).getId()));
+						main.commande.delete_pizza_of_the_list(((View)v.getParent()).getId());
+						main.backToComposition1();
 					}
 				});
 				
@@ -99,7 +113,7 @@ public class FragmentPanier extends Fragment {
 			((LinearLayout)content_cart).addView(item_cart);
 		}
 		
-		((TextView)view.findViewById(R.id.total_cart)).setText(total + " â‚¬");
+		((TextView)view.findViewById(R.id.total_cart)).setText(total + " €");
 		
 		return view;
 		
