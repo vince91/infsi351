@@ -13,6 +13,12 @@
         android:text="@string/your_cart"
         android:textAppearance="?android:attr/textAppearanceLarge" />
     
+    <View
+        android:layout_width="wrap_content"
+        android:background="@drawable/line_gradient"
+        android:layout_height="2dp"
+        android:layout_marginTop="15dp"></View>
+    
 	<LinearLayout
 	    android:layout_width="match_parent"
 	    android:layout_height="0dp"
@@ -58,6 +64,11 @@
 
     </LinearLayout>
     
+	<View
+        android:layout_width="wrap_content"
+        android:background="@drawable/line_gradient"
+        android:layout_height="2dp"
+        android:layout_marginBottom="15dp"></View>
 	
 	<LinearLayout
 	    android:layout_width="wrap_content"
@@ -87,6 +98,7 @@
      </LinearLayout>
      
 	<Button
+	    	style="@style/button1"
 	        android:id="@+id/button_confirm_order"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"

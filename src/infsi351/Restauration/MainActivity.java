@@ -1,6 +1,7 @@
 package infsi351.Restauration;
 
 import android.app.ActionBar;
+import android.app.ActionBar.Tab;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,17 +9,21 @@ import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.view.ViewParent;
 
 public class MainActivity extends FragmentActivity implements
 		ActionBar.TabListener {
 
 	public Commande commande;
+	public Boolean commande_validee;
 	/**
 	 * The serialization (saved instance state) Bundle key representing the
 	 * current tab position.
 	 */
 	private static final String STATE_SELECTED_NAVIGATION_ITEM = "selected_navigation_item";
 	private Pizza pizza;
+	
+	private Tab compositionTab;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -26,16 +31,19 @@ public class MainActivity extends FragmentActivity implements
 		setContentView(R.layout.activity_main);
 		
 		commande = new Commande();
+		commande_validee = false;
 
 		// Set up the action bar to show tabs.
 		final ActionBar actionBar = getActionBar();
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+		
+		compositionTab = actionBar.newTab().setText(R.string.title_section2)
+				.setTabListener(this);
 
 		// For each of the sections in the app, add a tab to the action bar.
 		actionBar.addTab(actionBar.newTab().setText(R.string.title_section1)
 				.setTabListener(this));
-		actionBar.addTab(actionBar.newTab().setText(R.string.title_section2)
-				.setTabListener(this));
+		actionBar.addTab(compositionTab);
 		actionBar.addTab(actionBar.newTab().setText(R.string.title_section3)
 				.setTabListener(this));
 		actionBar.addTab(actionBar.newTab().setText(R.string.title_section4)
@@ -87,8 +95,10 @@ public class MainActivity extends FragmentActivity implements
 			frag = new FragmentBoisson();
 		else if (tab_num == 3)
 			frag = new FragmentServeur();
-		else
-			frag = new FragmentPanier();
+		else{
+			if(!commande_validee){frag = new FragmentPanier();}
+			else{frag = new FragmentApresCommande();}
+		}
 		
 		getSupportFragmentManager().beginTransaction()
 				.replace(R.id.container, frag).commit();
@@ -112,13 +122,17 @@ public class MainActivity extends FragmentActivity implements
 		fragmentTransaction.commit();
 	}
 	
-	public void backToComposition1()
+	public void switchToComposition1(boolean left)
 	{
 		Fragment fragment = new FragmentComposition1();
 		android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-		fragmentTransaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_to_right);
+		if (left)
+			fragmentTransaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_to_right);
+		else
+			fragmentTransaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left);
 		fragmentTransaction.replace(R.id.container, fragment);
 		fragmentTransaction.commit();	
+		getActionBar().setSelectedNavigationItem(1);		
 	}
 	
 	public void refresh_da_panier(){
@@ -134,6 +148,40 @@ public class MainActivity extends FragmentActivity implements
 		fragmentTransaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_to_right);
 		fragmentTransaction.replace(R.id.container, fragment);
 		fragmentTransaction.commit();
+		commande_validee = true;
+	}
+	
+	public void switch_tab_to_panier(View v){
+		Fragment fragment = new FragmentPanier();
+		android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+		fragmentTransaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_to_right);
+		fragmentTransaction.replace(R.id.container, fragment);
+		fragmentTransaction.commit();
+	}
+	
+	public void switch_tab_to_composition(View v){
+		Fragment fragment = new FragmentComposition1();
+		android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+		fragmentTransaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_to_right);
+		fragmentTransaction.replace(R.id.container, fragment);
+		fragmentTransaction.commit();
+	}
+	
+	public void switch_tab_to_garcon(View v){
+		Fragment fragment = new FragmentServeur();
+		android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+		fragmentTransaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_to_right);
+		fragmentTransaction.replace(R.id.container, fragment);
+		fragmentTransaction.commit();
+	}
+	
+	public void switch_tab_to_boisson(View v){
+		Fragment fragment = new FragmentBoisson();
+		android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+		fragmentTransaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left);
+		fragmentTransaction.replace(R.id.container, fragment);
+		fragmentTransaction.commit();
+		getActionBar().setSelectedNavigationItem(2);		
 	}
 	
 	public void voir_addition(View v){
@@ -144,7 +192,9 @@ public class MainActivity extends FragmentActivity implements
 		fragmentTransaction.commit();
 	}
 	
-	
+	public void setPizza(Pizza p){
+		pizza = p;
+	}
 	
 	public Pizza getPizza() {
 		return pizza;
