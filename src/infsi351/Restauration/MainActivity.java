@@ -24,6 +24,7 @@ public class MainActivity extends FragmentActivity implements
 	private Pizza pizza;
 	
 	private Tab compositionTab;
+	private FragmentComposition1 frag_compo1;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,8 @@ public class MainActivity extends FragmentActivity implements
 		
 		commande = new Commande();
 		commande_validee = false;
+		
+		frag_compo1 = new FragmentComposition1();
 
 		// Set up the action bar to show tabs.
 		final ActionBar actionBar = getActionBar();
@@ -88,8 +91,8 @@ public class MainActivity extends FragmentActivity implements
 		if (tab_num == 0)
 			frag = new FragmentAccueil();
 		else if (tab_num == 1) {
+			frag = frag_compo1;
 			pizza = new Pizza();
-			frag = new FragmentComposition1();
 		}
 		else if (tab_num == 2)
 			frag = new FragmentBoisson();
@@ -132,7 +135,11 @@ public class MainActivity extends FragmentActivity implements
 			fragmentTransaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left);
 		fragmentTransaction.replace(R.id.container, fragment);
 		fragmentTransaction.commit();	
-		getActionBar().setSelectedNavigationItem(1);		
+		
+		Pizza old_pizza = new Pizza(pizza);
+		getActionBar().setSelectedNavigationItem(1);
+		pizza = old_pizza;
+		
 	}
 	
 	public void refresh_da_panier(){
