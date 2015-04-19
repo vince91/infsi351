@@ -172,6 +172,7 @@ public class MainActivity extends FragmentActivity implements
 		fragmentTransaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_to_right);
 		fragmentTransaction.replace(R.id.container, fragment);
 		fragmentTransaction.commit();
+		getActionBar().setSelectedNavigationItem(1);
 	}
 	
 	public void switch_tab_to_garcon(View v){
@@ -180,6 +181,7 @@ public class MainActivity extends FragmentActivity implements
 		fragmentTransaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_to_right);
 		fragmentTransaction.replace(R.id.container, fragment);
 		fragmentTransaction.commit();
+		getActionBar().setSelectedNavigationItem(3);
 	}
 	
 	public void switch_tab_to_boisson(View v){

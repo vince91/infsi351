@@ -71,13 +71,13 @@ public class FragmentBoisson extends Fragment {
 		
 		//Le groupe des champagnes
 		Group champagnes = new Group("Nos Champagnes");
-		Boisson moncuitrose = new Boisson("Moncuit Ros√©", 27);
+		Boisson moncuitrose = new Boisson("Moncuit RosÈ", 27);
 		champagnes.children.add(moncuitrose);
 		Boisson jlvergnon = new Boisson("Jean Louis Vergnon", 29);
 		champagnes.children.add(jlvergnon);
-		Boisson ruinartrose = new Boisson("Ruinart Ros√©", 38);
+		Boisson ruinartrose = new Boisson("Ruinart RosÈ", 38);
 		champagnes.children.add(ruinartrose);
-		Boisson krug = new Boisson("Krug Grande Cuv√©e Ros√©", 155);
+		Boisson krug = new Boisson("Krug Grande CuvÈe RosÈ", 155);
 		champagnes.children.add(krug);
 		
 		groups.append(0, champagnes);
@@ -85,7 +85,7 @@ public class FragmentBoisson extends Fragment {
 
 		//Le groupe des vins blancs
 		Group vins = new Group("Nos Vins Blancs");
-		Boisson pouilly = new Boisson("AOC Pouilly-Fum√©", 15);
+		Boisson pouilly = new Boisson("AOC Pouilly-FumÈ", 15);
 		vins.children.add(pouilly);
 		Boisson riesling = new Boisson("AOC Riesling Grand Cru", 15);
 		vins.children.add(riesling);
@@ -100,7 +100,7 @@ public class FragmentBoisson extends Fragment {
 		Group vinsrouges = new Group("Nos Vins Rouges");
 		Boisson cahors = new Boisson("AOC Cahors", 18);
 		vinsrouges.children.add(cahors);
-		Boisson chateuneuf = new Boisson("AOC Ch√¢teauneuf-du-Pape", 27);
+		Boisson chateuneuf = new Boisson("AOC Ch‚teauneuf-du-Pape", 27);
 		vinsrouges.children.add(chateuneuf);
 		Boisson saumurchampigny = new Boisson("AOC Saumur Champigny", 29);
 		vinsrouges.children.add(saumurchampigny);
@@ -113,7 +113,7 @@ public class FragmentBoisson extends Fragment {
 
 
 		//Le groupe des cocktails et aperos
-		Group cocktails = new Group("Nos Cocktails et Nos Ap√©ritifs");
+		Group cocktails = new Group("Nos Cocktails et Nos ApÈritifs");
 		Boisson kirroyal = new Boisson("Kir Royal", 13);
 		cocktails.children.add(kirroyal);
 		Boisson porto = new Boisson("Porto", 5);
@@ -125,11 +125,11 @@ public class FragmentBoisson extends Fragment {
 		
 		groups.append(3, cocktails);
 		
-		//Le groupe des bi√®res
-		Group bieres = new Group("Nos Bi√®res");
+		//Le groupe des biËres
+		Group bieres = new Group("Nos BiËres");
 		Boisson leffe = new Boisson("Leffe", 6.9);
 		bieres.children.add(leffe);
-		Boisson guinnessambree = new Boisson("Guinness Ambr√©e", 7);
+		Boisson guinnessambree = new Boisson("Guinness AmbrÈe", 7);
 		bieres.children.add(guinnessambree);
 		Boisson delirium = new Boisson("Delirium", 5);
 		bieres.children.add(delirium);
@@ -139,7 +139,7 @@ public class FragmentBoisson extends Fragment {
 		groups.append(4, bieres);
 
 		//Le groupe des softs
-		Group softs = new Group("Nos Jus et Nos Sodas");
+		Group softs = new Group("Nos Jus & Sodas");
 		Boisson coca = new Boisson("Coca-Cola", 4.5);
 		softs.children.add(coca);
 		Boisson icetea = new Boisson("Iced Tea", 4);

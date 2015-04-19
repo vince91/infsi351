@@ -42,13 +42,16 @@ public class MyExpandableListAdapter extends BaseExpandableListAdapter {
       convertView = inflater.inflate(R.layout.listeboissons_details, null);
     }
     text = (TextView) convertView.findViewById(R.id.textView1);
-    text.setText(children.getNom() + " " + children.getPrix() + "â‚¬");
+    text.setText(children.getNom());
+    text = (TextView) convertView.findViewById(R.id.textView2);
+    text.setText(children.getPrix() + "€");
     convertView.setOnClickListener(new OnClickListener() {
       @Override
       public void onClick(View v) {
 //        Toast.makeText(activity, children.getNom(),
 //            Toast.LENGTH_SHORT).show();
     	  activity.commande.add_boisson(children);
+    	  ((TextView)(v.findViewById(R.id.textView2))).append("    Ajouté !");
 
       }
     });

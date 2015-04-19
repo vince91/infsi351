@@ -14,10 +14,19 @@
         	android:text="@string/serveur_message" 
         	android:textAppearance="?android:attr/textAppearanceLarge"
         	style="@style/red"/>
+    
+    <View
+        android:layout_width="wrap_content"
+        android:background="@drawable/line_gradient"
+        android:layout_height="2dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"></View>
+    
     <TextView android:id="@+id/serveur_operation_message"
         	android:layout_width="match_parent"
         	android:layout_height="wrap_content"
         	android:gravity="center"
+        	android:layout_marginTop="75dp"
         	android:text="@string/serveur_operation_message" 
         	android:textAppearance="?android:attr/textAppearanceLarge"
         	style="@style/green"/>

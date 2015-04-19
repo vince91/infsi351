@@ -21,13 +21,14 @@
         <item name="android:actionBarTabTextStyle">@style/AppTheme.ActionBar.TabStyle</item>
         <item name="android:actionBarTabStyle">@style/AppTheme.ActionBar.TabView</item>
         <item name="android:actionBarTabBarStyle">@style/AppTheme.ActionBar.TabDivider</item>
+        <item name="android:expandableListViewStyle">@style/MyExpandableListView</item>
         <item name="android:textColor">@color/beige</item>
     </style>
     
     <style name="AppTheme.ActionBar.TabDivider" parent="@style/android:Widget.ActionBar.TabBar">
-        <item name="android:divider">@color/tab_highlight</item>
+        <item name="android:divider">@color/background</item>
         <item name="android:showDividers">middle</item>
-    	<item name="android:dividerPadding">12dip</item>
+    	<item name="android:dividerPadding">15dip</item>
     </style>
     
     <style name="AppTheme.ActionBar" parent="@style/android:Widget.ActionBar">
@@ -52,6 +53,11 @@
     <style name="AppTheme.ActionBar.textStyle">
         <item name="android:textColor">@color/background</item>
         <item name="android:textSize">25sp</item>
+    </style>
+    
+    <style name="MyExpandableListView" parent="@style/android:Widget.ListView">
+        <item name="android:groupIndicator">@color/tab_highlight</item>
+        <item name="android:childDivider">@color/transparent</item>
     </style>
     
     <style name="background">

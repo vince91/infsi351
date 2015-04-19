@@ -61,6 +61,7 @@
     <string name="votre_commande_message">Commande enregistrée!</string>
     <string name="serveur_operation_message">Choisissez une operation...</string>
     <string name="euro">€</string>
+    <string name="list_boissons">Carte des boissons</string>
 
 
 </resources>
