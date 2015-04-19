@@ -1,6 +1,7 @@
 package infsi351.Restauration;
 
 import android.app.ActionBar;
+import android.app.ActionBar.Tab;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -21,6 +22,8 @@ public class MainActivity extends FragmentActivity implements
 	 */
 	private static final String STATE_SELECTED_NAVIGATION_ITEM = "selected_navigation_item";
 	private Pizza pizza;
+	
+	private Tab compositionTab;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -33,12 +36,14 @@ public class MainActivity extends FragmentActivity implements
 		// Set up the action bar to show tabs.
 		final ActionBar actionBar = getActionBar();
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+		
+		compositionTab = actionBar.newTab().setText(R.string.title_section2)
+				.setTabListener(this);
 
 		// For each of the sections in the app, add a tab to the action bar.
 		actionBar.addTab(actionBar.newTab().setText(R.string.title_section1)
 				.setTabListener(this));
-		actionBar.addTab(actionBar.newTab().setText(R.string.title_section2)
-				.setTabListener(this));
+		actionBar.addTab(compositionTab);
 		actionBar.addTab(actionBar.newTab().setText(R.string.title_section3)
 				.setTabListener(this));
 		actionBar.addTab(actionBar.newTab().setText(R.string.title_section4)
@@ -119,11 +124,13 @@ public class MainActivity extends FragmentActivity implements
 	
 	public void backToComposition1()
 	{
+		getActionBar().setSelectedNavigationItem(1);
 		Fragment fragment = new FragmentComposition1();
 		android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
 		fragmentTransaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_to_right);
 		fragmentTransaction.replace(R.id.container, fragment);
 		fragmentTransaction.commit();	
+		
 	}
 	
 	public void refresh_da_panier(){
