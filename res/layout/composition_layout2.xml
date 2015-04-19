@@ -11,10 +11,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/choix_garniture"
-        android:textAppearance="?android:attr/textAppearanceLarge"
         android:gravity="center" 
         style="@style/red"
         android:layout_marginBottom="20dp"/>
+    
+    <View
+        android:layout_width="wrap_content"
+        android:background="@drawable/line_gradient"
+        android:layout_height="2dp"
+        android:layout_marginTop="15dp"></View>
 
     <LinearLayout
         android:id="@+id/linear"
@@ -41,6 +46,12 @@
             android:text="Prix: 0€" 
             style="@style/green"/>
 
+   <View
+        android:layout_width="wrap_content"
+        android:background="@drawable/line_gradient"
+        android:layout_height="2dp"
+        android:layout_marginTop="15dp"></View>
+        
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

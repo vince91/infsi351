@@ -124,7 +124,6 @@ public class MainActivity extends FragmentActivity implements
 	
 	public void switchToComposition1(boolean left)
 	{
-		getActionBar().setSelectedNavigationItem(1);
 		Fragment fragment = new FragmentComposition1();
 		android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
 		if (left)
@@ -133,7 +132,7 @@ public class MainActivity extends FragmentActivity implements
 			fragmentTransaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left);
 		fragmentTransaction.replace(R.id.container, fragment);
 		fragmentTransaction.commit();	
-		
+		getActionBar().setSelectedNavigationItem(1);		
 	}
 	
 	public void refresh_da_panier(){
@@ -182,6 +181,7 @@ public class MainActivity extends FragmentActivity implements
 		fragmentTransaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left);
 		fragmentTransaction.replace(R.id.container, fragment);
 		fragmentTransaction.commit();
+		getActionBar().setSelectedNavigationItem(2);		
 	}
 	
 	public void voir_addition(View v){
