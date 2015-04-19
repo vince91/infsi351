@@ -15,8 +15,17 @@ public class FragmentServeur extends Fragment {
 	 * fragment.
 	 */
 	public static final String ARG_SECTION_NUMBER = "section_number";
+	public static final int MAX_PAIN = 4;
+	public static final int MAX_CARAFFE_EAU = 4;
+	
+	private int numPain;
+	private int numEau;
+	private boolean serveurAppelle;
 
 	public FragmentServeur() {
+		numPain=0;
+		numEau=0;
+		serveurAppelle=false;
 	}
 
 	@Override
@@ -27,6 +36,7 @@ public class FragmentServeur extends Fragment {
 		View view = inflater.inflate(R.layout.serveur_fragment, container, false);
 		final View view_toilettes = inflater.inflate(R.layout.toilettes_fragment, container, false);
 		
+		//BUTTON eau
 		final Button button_eau = (Button) view.findViewById(R.id.button_eau);
         button_eau.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View v) {
@@ -36,7 +46,13 @@ public class FragmentServeur extends Fragment {
             	builder.setPositiveButton("Oui, svp!", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                     	AlertDialog.Builder builder_confirm = new AlertDialog.Builder(getActivity());
-                    	builder_confirm.setMessage("Une caraffe d'eau arrivera bientot").setTitle("Eau commandé");
+                    	if(numEau < MAX_CARAFFE_EAU){
+                    		numEau++;
+                    		builder_confirm.setMessage("Une caraffe d'eau arrivera bientot").setTitle("Eau commandé");
+                        	
+                    	}else{
+                    		builder_confirm.setMessage("Vous avez commandé trop d'eau!").setTitle("Trop d'eau");
+                    	}
                     	AlertDialog dialog_confirm = builder_confirm.create();
                     	dialog.dismiss();
                  		dialog_confirm.show();
@@ -53,6 +69,7 @@ public class FragmentServeur extends Fragment {
             }
         });
         
+      //BUTTON pain
         final Button button_pain = (Button) view.findViewById(R.id.button_pain);
         button_pain.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View v) {
@@ -61,8 +78,14 @@ public class FragmentServeur extends Fragment {
             	builder.setMessage("Voulez-vous du pain?").setTitle("Pain");
             	builder.setPositiveButton("Oui, svp!", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
+                    	
                     	AlertDialog.Builder builder_confirm = new AlertDialog.Builder(getActivity());
-                    	builder_confirm.setMessage("Du pain arrivera bientot").setTitle("Pain commandé");
+                    	if(numPain < MAX_PAIN){
+                    		numPain++;
+                    		builder_confirm.setMessage("Du pain arrivera bientot").setTitle("Pain commandé");
+                    	}else{
+                    		builder_confirm.setMessage("Vous avez commandé trop de pain!").setTitle("Trop de pain");
+                    	}
                     	AlertDialog dialog_confirm = builder_confirm.create();
                     	dialog.dismiss();
                  		dialog_confirm.show();
@@ -79,17 +102,24 @@ public class FragmentServeur extends Fragment {
             }
         });
 		
+      //BUTTON appel serveur
         final Button button_serveur = (Button) view.findViewById(R.id.button_serveur);
         button_serveur.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View v) {
             	AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-            	builder.setMessage("Un serveur arrivera bientot à votre table!").setTitle("Serveur coming soon");
-         // Create the AlertDialog
+            	if(serveurAppelle==false){
+            		serveurAppelle=true;
+            		builder.setMessage("Un serveur arrivera bientot à votre table!").setTitle("Serveur coming soon");
+            	}else{
+            		builder.setMessage("Un serveur est en tran d'arriver à votre table.. Voulez-nous éxcuser pour l'attente.").setTitle("Serveur déjà appellé");
+                }
+     
          		AlertDialog dialog = builder.create();
          		dialog.show();
             }
         });
         
+      //BUTTON toilettes
         final Button button_toilette = (Button) view.findViewById(R.id.button_toilettes);
         button_toilette.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View v) {

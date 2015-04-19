@@ -1,66 +1,66 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/aprescommande_view"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    tools:ignore="MergeRootFrame" > 
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" 
+    android:gravity="center" 
+    style="@style/background">
     
-<TableLayout 
-android:layout_width="match_parent"
-android:layout_height="match_parent">
-	<TableRow
-	    android:layout_width="match_parent"
-		android:layout_height="match_parent">
-	    <TextView android:id="@+id/merci_message"
-        	android:layout_width="match_parent"
-        	android:layout_height="match_parent"
-        	android:layout_gravity="center"
-        	android:hint="@string/merci_message" />
-	    
-	</TableRow>
-	<TableRow
-	    android:layout_width="match_parent"
-		android:layout_height="match_parent">
-	    <TableLayout >
-	        <TableRow android:layout_weight="1"
-	            android:layout_width="match_parent"
-				android:layout_height="match_parent">
-				<ImageView
+    <TextView android:id="@+id/merci_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/merci_message" 
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        style="@style/red"/>
+    <TextView android:id="@+id/votre_commande_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/votre_commande_message" 
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        style="@style/green"/>
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal">
+        
+        <RelativeLayout 
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+  			android:orientation="vertical" 
+  			android:layout_gravity="center"
+  			android:layout_weight="1"
+  			android:layout_marginLeft="10dp"
+        	android:layout_marginRight="10dp">
+			<ImageView
     			android:id="@+id/chronom_img"
  				android:layout_height="wrap_content" 
  				android:layout_width="wrap_content"
-        		android:layout_gravity="center"
-        		android:src="@drawable/icon_chronom"/>
-	        </TableRow>
-	        <TableRow android:layout_weight="1"
-	            android:layout_width="match_parent"
-				android:layout_height="match_parent">
-	             <TextView android:id="@+id/chronom_message"
-        			android:layout_width="match_parent"
-        			android:layout_height="match_parent"
-        			android:layout_gravity="center"
-        			android:hint="@string/chronom_message" />
-	        </TableRow> 
-	        <TableRow android:layout_weight="1"
-	            android:layout_width="match_parent"
-				android:layout_height="match_parent">
-	              <TextView android:id="@+id/counter_value"
-        			android:layout_width="match_parent"
-        			android:layout_height="match_parent"
-        			android:layout_gravity="center"
-        			android:hint="@string/counter_value" />
-	            <!--  
-	            <Chronometer
-    			android:id="@+id/chrometer"
- 				android:layout_height="wrap_content" 
- 				android:layout_width="wrap_content"
-        		android:layout_gravity="center"
- 				android:textSize="40sp"/> -->
-	        </TableRow> 
-	    </TableLayout>
+        		android:layout_centerHorizontal="true"
+        		android:src="@drawable/icon_chronom" 
+        		android:contentDescription="@+string/image_chron" />
+	        
+	        <TextView android:id="@+id/chronom_message"
+        		android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:layout_centerHorizontal="true"
+        		android:gravity="center"
+       			android:layout_below="@id/chronom_img"
+       			android:text="@string/chronom_message" />
+	       
+			<TextView android:id="@+id/counter_value"
+       			android:layout_width="wrap_content"
+       			android:layout_height="wrap_content"
+       			android:layout_centerHorizontal="true"
+       			android:layout_below="@id/chronom_message"
+       			android:text="@string/counter_value" 
+       			style="@style/redish"/>
+	    </RelativeLayout>
 	   
-	    <Button android:layout_weight="1"
+	    <Button
        		android:id="@+id/button_camera"
         	android:layout_width="150dp"
         	android:layout_height="150dp"
@@ -68,9 +68,11 @@ android:layout_height="match_parent">
         	android:layout_marginLeft="10dp"
         	android:layout_marginRight="10dp"
         	android:layout_marginTop="10dp" 
-        	android:layout_gravity="center"    
+        	android:layout_gravity="center_vertical"
+        	android:layout_weight="1"
         	android:text="@string/button_camera"/> 
-	    <Button android:layout_weight="1"
+        	
+	    <Button
        		android:id="@+id/button_addition"
         	android:layout_width="150dp"
         	android:layout_height="150dp"
@@ -78,11 +80,10 @@ android:layout_height="match_parent">
         	android:layout_marginLeft="10dp"
         	android:layout_marginRight="10dp"
         	android:layout_marginTop="10dp" 
-        	android:layout_gravity="center"   
+        	android:layout_gravity="center_vertical"
+        	android:layout_weight="1"
         	android:text="@string/button_addition" />
 	    
-	</TableRow>
-
-
-</TableLayout>
-</FrameLayout>
+    </LinearLayout>
+    
+</LinearLayout>

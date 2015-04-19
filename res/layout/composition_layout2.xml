@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="match_parent"
+    android:layout_height="fill_parent"
     android:orientation="vertical"
-    android:gravity="center" >
+    android:gravity="center" 
+    style="@style/background" >
 
     <TextView
         android:id="@+id/choix_garniture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/choix_garniture"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:gravity="center" />
+        android:gravity="center" 
+        style="@style/red"
+        android:layout_marginBottom="20dp"/>
+    
+    <View
+        android:layout_width="wrap_content"
+        android:background="@drawable/line_gradient"
+        android:layout_height="2dp"
+        android:layout_marginTop="15dp"></View>
 
     <LinearLayout
         android:id="@+id/linear"
@@ -28,29 +36,41 @@
             android:columnCount="2" >
         </GridLayout>
 
-        <TextView
-            android:id="@+id/textView3"
+ 
+    </LinearLayout>
+    
+    <TextView
+            android:id="@+id/prixCompo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="" />
-    </LinearLayout>
+            android:text="Prix: 0€" 
+            style="@style/green"/>
 
+   <View
+        android:layout_width="wrap_content"
+        android:background="@drawable/line_gradient"
+        android:layout_height="2dp"
+        android:layout_marginTop="15dp"></View>
+        
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center" >
+        android:gravity="center"
+        android:layout_marginTop="20dp" >
 
         <Button
             android:id="@+id/buttonRevenirBase"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/bouton_revenir_base" />
+            android:text="@string/bouton_revenir_base"
+            style="@style/button1" />
 
         <Button
             android:id="@+id/buttonConfirmerPizza"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/bouton_confirmer" />
+            android:text="@string/bouton_confirmer" 
+            style="@style/button1" />
 
     </LinearLayout>
 

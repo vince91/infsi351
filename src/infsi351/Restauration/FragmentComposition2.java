@@ -37,7 +37,7 @@ public class FragmentComposition2 extends Fragment {
 		mainActivity = (MainActivity) getActivity();
 		pizza = mainActivity.getPizza();
 
-		Resources res = getResources();
+		final Resources res = getResources();
 		String packageName = getActivity().getPackageName();
 		
 		View view = inflater.inflate(R.layout.composition_layout2, container, false);
@@ -45,7 +45,7 @@ public class FragmentComposition2 extends Fragment {
 		final Button button_retour = (Button) view.findViewById(R.id.buttonRevenirBase);
         button_retour.setOnClickListener(new View.OnClickListener() {
              public void onClick(View v) {
-            	 ((MainActivity) getActivity()).backToComposition1();
+            	 ((MainActivity) getActivity()).switchToComposition1(true);
              }
          });
         
@@ -53,9 +53,13 @@ public class FragmentComposition2 extends Fragment {
         button_valider.setOnClickListener(new View.OnClickListener() {
              public void onClick(View v) {
             	 mainActivity.validerPizza();
+            	 ((MainActivity) getActivity()).switch_tab_to_boisson(null);
             	 Log.d("app", pizza.getBase() + "-" + pizza.getIngredient() + " " + pizza.getPrix() + "euros");
              }
          });
+        
+        final TextView prix = (TextView) view.findViewById(R.id.prixCompo);
+		prix.setText("Prix : " + pizza.getPrix() + res.getString(R.string.euro));
 
 		GridLayout gridLayout = (GridLayout) view.findViewById(R.id.gridLayout);
 		float density = res.getDisplayMetrics().density;
@@ -69,13 +73,12 @@ public class FragmentComposition2 extends Fragment {
 			GridLayout ingredientGrid = (GridLayout) viewIngredient.findViewById(R.id.gridIngredient);
 			
 			for(final String ingredient : entry.getValue()) {
-				ToggleButton button = new ToggleButton(getActivity());
+				ToggleButton button = (ToggleButton) inflater.inflate(R.layout.toggle_ingredient, container, false);
 				
 				final String ingredientString = res.getString(res.getIdentifier(ingredient, "string", packageName));
 				button.setText(ingredientString);
 				button.setTextOff(ingredientString);
 				button.setTextOn(ingredientString);
-				button.setWidth((int)(100 * density));
 				ingredientGrid.addView(button);
 				
 				if (pizza.checkIngredient(ingredient))
@@ -88,6 +91,7 @@ public class FragmentComposition2 extends Fragment {
 							pizza.ajouterIngredient(ingredient);
 						else
 							pizza.removeIngredient(ingredient);
+						prix.setText("Prix : " + pizza.getPrix() + res.getString(R.string.euro));
 					}
 				});
 				
