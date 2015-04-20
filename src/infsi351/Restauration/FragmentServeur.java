@@ -125,17 +125,17 @@ public class FragmentServeur extends Fragment {
         });
         
         //BUTTON toilettes
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        /*AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
     	builder.setMessage("Voilˆ le plan pour arriver ˆ les toilettes:").setTitle("Carte toilettes");
     	builder.setView(view_toilettes);
-    	final AlertDialog dialog = builder.create();
+    	final AlertDialog dialog = builder.create(); */
         
         final Button button_toilette = (Button) view.findViewById(R.id.button_toilettes);
         button_toilette.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View v) {
-<<<<<<< HEAD
-        		dialog.show();
-=======
+
+        		/*dialog.show();*/
+
         		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
             	builder.setMessage(getResources().getString(R.string.map_to_toilets));
             	builder.setView(view_toilettes);
@@ -143,7 +143,6 @@ public class FragmentServeur extends Fragment {
          		AlertDialog dialog = builder.create();
          		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
          		dialog.show();
->>>>>>> 13df372cc6a867e7efcc67793768e6e326c85542
             }
         });
         
