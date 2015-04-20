@@ -80,6 +80,36 @@
     <string name="empty_commande">Votre commande est vide !</string>
     <string name="make_da_pizza">Composez votre pizza !</string>
     <string name="boisson_commandee">Vous avez bien commandé un </string>
+    <string name="moncuitrose">Moncuit Rosé</string>
+    <string name="jlvergnon">Jean Louis Vergnon</string>
+    <string name="ruinartrose">Ruinart Rosé</string>
+    <string name="kruggrandecuvee">Krug Grande Cuvée Rosé</string>
+    <string name="pouillyfume">AOC Pouilly-Fumé</string>
+    <string name="rieslinggrandcru">AOC Riesling Grand Cru</string>
+    <string name="saumur">AOC Saumur</string>
+    <string name="bellet">AOC Bellet</string>
+    <string name="cahors">AOC Cahors</string>
+    <string name="chateauneufpape">AOC Châteauneuf-du-Pape</string>
+    <string name="saumurchampigny">AOC Saumur Champigny</string>
+    <string name="saintemilion">AOC Saint-Emilion Grand Cru</string>
+    <string name="kirroyal">Kir Royal</string>
+    <string name="porto">Porto</string>
+    <string name="tipunch">Ti Punch</string>
+    <string name="sangria">Sangria</string>
+    <string name="leffe">Leffe</string>
+    <string name="guinnessambree">Guinness Ambrée</string>
+    <string name="delirium">Delirium</string>
+    <string name="carlsberg">Carlsberg Elephant</string>
+    <string name="cocacola">Coca-Cola</string>
+    <string name="icedtea">Iced Tea</string>
+    <string name="orange">Jus d\'orange</string>
+    <string name="ananas">Jus d\'ananas</string>
+    <string name="groupchampagnes">Nos Champagnes</string>
+    <string name="groupvinsblancs">Nos Vins Blancs</string>
+    <string name="groupvinsrouges">Nos Vins Rouges</string>
+    <string name="groupcocktails">Nos Cocktails et Nos Apéritifs</string>
+    <string name="groupbieres">Nos Bières</string>
+    <string name="groupsofts">Nos Jus et Sodas</string>
 
 
 </resources>

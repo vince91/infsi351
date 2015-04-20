@@ -18,7 +18,7 @@ public class FragmentAccueil extends Fragment {
 	 * fragment.
 	 */
 	public static final String ARG_SECTION_NUMBER = "section_number";
-	private static final int NUM_PAGES = 5;
+	private static final int NUM_PAGES = 4;
 	private ViewPager mPager;
 	private PagerAdapter mPagerAdapter;
 	private Timer timer;
@@ -72,9 +72,7 @@ public class FragmentAccueil extends Fragment {
         	else if (position == 3){
         		return new SlidePage4_Accueil();
         	}
-        	else if (position == 4){
-        		return new SlidePage5_Accueil();
-        	}
+        
         	else return new SlidePage1_Accueil();
 
         }
@@ -104,8 +102,9 @@ public class FragmentAccueil extends Fragment {
             	((MainActivity) getActivity()).runOnUiThread(new Runnable() {
                     public void run() {
 
-                        if (page > 4) { // In my case the number of pages are 5
-                            timer.cancel();
+                        if (page > 3) { // In my case the number of pages are 4
+                            //timer.cancel();
+                        	mPager.setCurrentItem(0);
                             // Showing a toast for just testing purpose
 //                            Toast.makeText(((MainActivity) getActivity()).getApplicationContext(), "Timer stoped",
 //                                    Toast.LENGTH_LONG).show();
