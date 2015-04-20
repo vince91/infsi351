@@ -62,41 +62,41 @@ public class FragmentBoisson extends Fragment {
 	public void createData() {
 		
 		//Le groupe des champagnes
-		Group champagnes = new Group("Nos Champagnes");
-		Boisson moncuitrose = new Boisson("Moncuit Rosé", 27);
+		Group champagnes = new Group(getResources().getString(R.string.groupchampagnes));
+		Boisson moncuitrose = new Boisson(getResources().getString(R.string.moncuitrose), 27);
 		champagnes.children.add(moncuitrose);
-		Boisson jlvergnon = new Boisson("Jean Louis Vergnon", 29);
+		Boisson jlvergnon = new Boisson(getResources().getString(R.string.jlvergnon), 29);
 		champagnes.children.add(jlvergnon);
-		Boisson ruinartrose = new Boisson("Ruinart Rosé", 38);
+		Boisson ruinartrose = new Boisson(getResources().getString(R.string.ruinartrose), 38);
 		champagnes.children.add(ruinartrose);
-		Boisson krug = new Boisson("Krug Grande Cuvée Rosé", 155);
+		Boisson krug = new Boisson(getResources().getString(R.string.kruggrandecuvee), 155);
 		champagnes.children.add(krug);
 		
 		groups.append(0, champagnes);
 
 
 		//Le groupe des vins blancs
-		Group vins = new Group("Nos Vins Blancs");
-		Boisson pouilly = new Boisson("AOC Pouilly-Fumé", 15);
+		Group vins = new Group(getResources().getString(R.string.groupvinsblancs));
+		Boisson pouilly = new Boisson(getResources().getString(R.string.pouillyfume), 15);
 		vins.children.add(pouilly);
-		Boisson riesling = new Boisson("AOC Riesling Grand Cru", 15);
+		Boisson riesling = new Boisson(getResources().getString(R.string.rieslinggrandcru), 15);
 		vins.children.add(riesling);
-		Boisson saumur = new Boisson("AOC Saumur", 20);
+		Boisson saumur = new Boisson(getResources().getString(R.string.saumur), 20);
 		vins.children.add(saumur);
-		Boisson bellet = new Boisson("AOC Bellet", 22);
+		Boisson bellet = new Boisson(getResources().getString(R.string.bellet), 22);
 		vins.children.add(bellet);
 
 		groups.append(1, vins);
 
 		//Le groupe des vins rouges
-		Group vinsrouges = new Group("Nos Vins Rouges");
-		Boisson cahors = new Boisson("AOC Cahors", 18);
+		Group vinsrouges = new Group(getResources().getString(R.string.groupvinsrouges));
+		Boisson cahors = new Boisson(getResources().getString(R.string.cahors), 18);
 		vinsrouges.children.add(cahors);
-		Boisson chateuneuf = new Boisson("AOC Châteauneuf-du-Pape", 27);
+		Boisson chateuneuf = new Boisson(getResources().getString(R.string.chateauneufpape), 27);
 		vinsrouges.children.add(chateuneuf);
-		Boisson saumurchampigny = new Boisson("AOC Saumur Champigny", 29);
+		Boisson saumurchampigny = new Boisson(getResources().getString(R.string.saumurchampigny), 29);
 		vinsrouges.children.add(saumurchampigny);
-		Boisson stemilion = new Boisson("AOC Saint-Emilion Grand Cru", 58);
+		Boisson stemilion = new Boisson(getResources().getString(R.string.saintemilion), 58);
 		vinsrouges.children.add(stemilion);
 			
 
@@ -105,40 +105,40 @@ public class FragmentBoisson extends Fragment {
 
 
 		//Le groupe des cocktails et aperos
-		Group cocktails = new Group("Nos Cocktails et Nos Apéritifs");
-		Boisson kirroyal = new Boisson("Kir Royal", 13);
+		Group cocktails = new Group(getResources().getString(R.string.groupcocktails));
+		Boisson kirroyal = new Boisson(getResources().getString(R.string.kirroyal), 13);
 		cocktails.children.add(kirroyal);
-		Boisson porto = new Boisson("Porto", 5);
+		Boisson porto = new Boisson(getResources().getString(R.string.porto), 5);
 		cocktails.children.add(porto);
-		Boisson tipunch = new Boisson("Ti Punch", 6.5);
+		Boisson tipunch = new Boisson(getResources().getString(R.string.tipunch), 6.5);
 		cocktails.children.add(tipunch);
-		Boisson sangria = new Boisson("Sangria", 5.5);
+		Boisson sangria = new Boisson(getResources().getString(R.string.sangria), 5.5);
 		cocktails.children.add(sangria);
 		
 		groups.append(3, cocktails);
 		
-		//Le groupe des bières
-		Group bieres = new Group("Nos Bières");
-		Boisson leffe = new Boisson("Leffe", 6.9);
+		//Le groupe des biï¿½res
+		Group bieres = new Group(getResources().getString(R.string.groupbieres));
+		Boisson leffe = new Boisson(getResources().getString(R.string.leffe), 6.9);
 		bieres.children.add(leffe);
-		Boisson guinnessambree = new Boisson("Guinness Ambrée", 7);
+		Boisson guinnessambree = new Boisson(getResources().getString(R.string.guinnessambree), 7);
 		bieres.children.add(guinnessambree);
-		Boisson delirium = new Boisson("Delirium", 5);
+		Boisson delirium = new Boisson(getResources().getString(R.string.delirium), 5);
 		bieres.children.add(delirium);
-		Boisson carlsbergElephant = new Boisson("Carlsberg Elephant", 4);
+		Boisson carlsbergElephant = new Boisson(getResources().getString(R.string.carlsberg), 4);
 		bieres.children.add(carlsbergElephant);
 		
 		groups.append(4, bieres);
 
 		//Le groupe des softs
-		Group softs = new Group("Nos Jus & Sodas");
-		Boisson coca = new Boisson("Coca-Cola", 4.5);
+		Group softs = new Group(getResources().getString(R.string.groupsofts));
+		Boisson coca = new Boisson(getResources().getString(R.string.cocacola), 4.5);
 		softs.children.add(coca);
-		Boisson icetea = new Boisson("Iced Tea", 4);
+		Boisson icetea = new Boisson(getResources().getString(R.string.icedtea), 4);
 		softs.children.add(icetea);
-		Boisson jusorange = new Boisson("Jus d'orange", 6);
+		Boisson jusorange = new Boisson(getResources().getString(R.string.orange), 6);
 		softs.children.add(jusorange);
-		Boisson jusananas = new Boisson("Jus d'ananas", 6);
+		Boisson jusananas = new Boisson(getResources().getString(R.string.ananas), 6);
 		softs.children.add(jusananas);
 		
 		groups.append(5, softs);
