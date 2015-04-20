@@ -8,7 +8,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
     <string name="title_section4">Garçon !</string>
-    <string name="title_section5">Panier</string>
+    <string name="title_section5">Commande</string>
     <string name="choix_base">Choisissez la base de votre pizza :</string>
     <string name="base_creme">Crème fraîche</string>
     <string name="base_tomate">Sauce tomate</string>
@@ -37,9 +37,9 @@
     <string name="ingredient8">Olives</string>
     <string name="ingredient9">Poivrons</string>
     <string name="ingredient10">Oignons</string>
-    <string name="button_eau">Demande Eau</string>
-    <string name="button_pain">Demande Pain</string>
-    <string name="button_serveur">Appel Serveur</string>
+    <string name="button_eau">Demander de l\'eau</string>
+    <string name="button_pain">Demander du pain</string>
+    <string name="button_serveur">Appeler le serveur</string>
     <string name="button_toilettes">Toilettes</string>
     <string name="eau_message">Quantité:</string>
     <string name="merci_message">Merci !</string>
@@ -59,8 +59,27 @@
     <string name="counter_value">1000000</string>
     <string name="image_chron">Chronometer</string>
     <string name="votre_commande_message">Commande enregistrée!</string>
-    <string name="serveur_operation_message">Choisissez une operation...</string>
+    <string name="serveur_operation_message">De quoi avez-vous besoin ?</string>
     <string name="euro">€</string>
+    <string name="list_boissons">Carte des boissons</string>
+    <string name="no_drinks">Vous n\'avez pas commandé de boisson</string>
+    <string name="no_pizza">Vous n\'avez pas commandé de pizza</string>
+    <string name="commande_is_coming">Votre commande est en train d\'arriver.</string>
+    <string name="wait_before_bill">Veuillez attendre votre commande avant de demander l\'addition !</string>
+    <string name="water_is_coming">Une carafe d\'eau arrivera bientôt !</string>
+    <string name="too_much_water">Vous avez commandé trop d\'eau !</string>
+    <string name="want_some_water">Désirez-vous une carafe d\'eau ?</string>
+    <string name="yes_i_do">Oui, s\'il vous plait !</string>
+    <string name="no_i_dont">Non merci !</string>
+    <string name="want_some_bread">Voulez-vous du pain ?</string>
+    <string name="bread_is_coming">Une corbeille de pain arrivera bientôt !</string>
+    <string name="too_muc_bread">Vous avez commandé trop de pain !</string>
+    <string name="garcon_is_coming">Un serveur arrivera bientôt à votre table</string>
+    <string name="garcon_is_still_coming">Un serveur est en train d\'arriver à votre table. Veuillez nous excuser pour l\'attente.</string>
+    <string name="map_to_toilets">Voici le plan menant aux toilettes.</string>
+    <string name="empty_commande">Votre commande est vide !</string>
+    <string name="make_da_pizza">Composez votre pizza !</string>
+    <string name="boisson_commandee">Vous avez bien commandé un </string>
 
 
 </resources>

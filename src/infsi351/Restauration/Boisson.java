@@ -9,10 +9,10 @@ public class Boisson {
 	private double prix;
 	private double contenance;
 
-	public Boisson(String nom){
+	public Boisson(String nom, double prix){
 		this.nom = nom;
 		qteStock=0;
-		prix = 0.0;
+		this.prix = prix;
 		contenance = 0.0;	
 	}
 

@@ -1,9 +1,11 @@
 package infsi351.Restauration;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
@@ -15,10 +17,10 @@ public class MyExpandableListAdapter extends BaseExpandableListAdapter {
 
   private final SparseArray<Group> groups;
   public LayoutInflater inflater;
-  public Activity activity;
+  public MainActivity activity;
 
   public MyExpandableListAdapter(Activity act, SparseArray<Group> groups) {
-    activity = act;
+    activity = (MainActivity)act;
     this.groups = groups;
     inflater = act.getLayoutInflater();
   }
@@ -43,11 +45,20 @@ public class MyExpandableListAdapter extends BaseExpandableListAdapter {
     }
     text = (TextView) convertView.findViewById(R.id.textView1);
     text.setText(children.getNom());
+    text = (TextView) convertView.findViewById(R.id.textView2);
+    text.setText(children.getPrix() + activity.getResources().getString(R.string.euro));
     convertView.setOnClickListener(new OnClickListener() {
       @Override
       public void onClick(View v) {
-        Toast.makeText(activity, children.getNom(),
-            Toast.LENGTH_SHORT).show();
+//        Toast.makeText(activity, children.getNom(),
+//            Toast.LENGTH_SHORT).show();
+    	  	activity.commande.add_boisson(children);
+			AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+			builder.setMessage(activity.getResources().getString(R.string.boisson_commandee) + " " + children.getNom());
+			AlertDialog dialog = builder.create();
+			dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+			dialog.show();
+
       }
     });
     return convertView;

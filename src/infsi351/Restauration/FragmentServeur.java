@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 
 public class FragmentServeur extends Fragment {
@@ -42,29 +43,31 @@ public class FragmentServeur extends Fragment {
         	public void onClick(View v) {
             	
             	AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-            	builder.setMessage("Voulez-vous une caraffe d'eau?").setTitle("Eau");
-            	builder.setPositiveButton("Oui, svp!", new DialogInterface.OnClickListener() {
+            	builder.setMessage(getResources().getString(R.string.want_some_water));
+            	builder.setPositiveButton(getResources().getString(R.string.yes_i_do), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                     	AlertDialog.Builder builder_confirm = new AlertDialog.Builder(getActivity());
                     	if(numEau < MAX_CARAFFE_EAU){
                     		numEau++;
-                    		builder_confirm.setMessage("Une caraffe d'eau arrivera bientot").setTitle("Eau commandŽ");
+                    		builder_confirm.setMessage(getResources().getString(R.string.water_is_coming));
                         	
                     	}else{
-                    		builder_confirm.setMessage("Vous avez commandŽ trop d'eau!").setTitle("Trop d'eau");
+                    		builder_confirm.setMessage(getResources().getString(R.string.too_much_water));
                     	}
                     	AlertDialog dialog_confirm = builder_confirm.create();
+                    	dialog_confirm.requestWindowFeature(Window.FEATURE_NO_TITLE);
                     	dialog.dismiss();
                  		dialog_confirm.show();
                     }
                 });
-            	builder.setNegativeButton("No, merci!", new DialogInterface.OnClickListener() {
+            	builder.setNegativeButton(getResources().getString(R.string.no_i_dont), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // User cancelled the dialog
                     }
                 });
          // Create the AlertDialog
          		AlertDialog dialog = builder.create();
+         		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
          		dialog.show();
             }
         });
@@ -75,28 +78,30 @@ public class FragmentServeur extends Fragment {
         	public void onClick(View v) {
             	
             	AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-            	builder.setMessage("Voulez-vous du pain?").setTitle("Pain");
-            	builder.setPositiveButton("Oui, svp!", new DialogInterface.OnClickListener() {
+            	builder.setMessage(getResources().getString(R.string.want_some_bread));
+            	builder.setPositiveButton(getResources().getString(R.string.yes_i_do), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                     	AlertDialog.Builder builder_confirm = new AlertDialog.Builder(getActivity());
                     	if(numPain < MAX_PAIN){
                     		numPain++;
-                    		builder_confirm.setMessage("Du pain arrivera bientot").setTitle("Pain commandŽ");
+                    		builder_confirm.setMessage(getResources().getString(R.string.bread_is_coming));
                     	}else{
-                    		builder_confirm.setMessage("Vous avez commandŽ trop de pain!").setTitle("Trop de pain");
+                    		builder_confirm.setMessage(getResources().getString(R.string.too_muc_bread));
                     	}
                     	AlertDialog dialog_confirm = builder_confirm.create();
+                    	dialog_confirm.requestWindowFeature(Window.FEATURE_NO_TITLE);
                     	dialog.dismiss();
                  		dialog_confirm.show();
                     }
                 });
-            	builder.setNegativeButton("No, merci!", new DialogInterface.OnClickListener() {
+            	builder.setNegativeButton(getResources().getString(R.string.no_i_dont), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // User cancelled the dialog
                     }
                 });
          // Create the AlertDialog
          		AlertDialog dialog = builder.create();
+         		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
          		dialog.show();
             }
         });
@@ -108,12 +113,13 @@ public class FragmentServeur extends Fragment {
             	AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
             	if(serveurAppelle==false){
             		serveurAppelle=true;
-            		builder.setMessage("Un serveur arrivera bientot ˆ votre table!").setTitle("Serveur coming soon");
+            		builder.setMessage(getResources().getString(R.string.garcon_is_coming));
             	}else{
-            		builder.setMessage("Un serveur est en tran d'arriver ˆ votre table.. Voulez-nous Žxcuser pour l'attente.").setTitle("Serveur dŽjˆ appellŽ");
+            		builder.setMessage(getResources().getString(R.string.garcon_is_still_coming));
                 }
      
          		AlertDialog dialog = builder.create();
+         		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
          		dialog.show();
             }
         });
@@ -127,7 +133,17 @@ public class FragmentServeur extends Fragment {
         final Button button_toilette = (Button) view.findViewById(R.id.button_toilettes);
         button_toilette.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View v) {
+<<<<<<< HEAD
         		dialog.show();
+=======
+        		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+            	builder.setMessage(getResources().getString(R.string.map_to_toilets));
+            	builder.setView(view_toilettes);
+         // Create the AlertDialog
+         		AlertDialog dialog = builder.create();
+         		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+         		dialog.show();
+>>>>>>> 13df372cc6a867e7efcc67793768e6e326c85542
             }
         });
         

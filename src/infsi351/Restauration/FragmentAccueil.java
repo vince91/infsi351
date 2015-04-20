@@ -3,20 +3,14 @@ package infsi351.Restauration;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import android.app.Activity;
-import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-import android.widget.Toast;
 
 public class FragmentAccueil extends Fragment {
 	/**
@@ -113,8 +107,8 @@ public class FragmentAccueil extends Fragment {
                         if (page > 4) { // In my case the number of pages are 5
                             timer.cancel();
                             // Showing a toast for just testing purpose
-                            Toast.makeText(((MainActivity) getActivity()).getApplicationContext(), "Timer stoped",
-                                    Toast.LENGTH_LONG).show();
+//                            Toast.makeText(((MainActivity) getActivity()).getApplicationContext(), "Timer stoped",
+//                                    Toast.LENGTH_LONG).show();
                         } else {
                             mPager.setCurrentItem(page++);
                         }
