@@ -8,7 +8,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
     <string name="title_section4">Garçon !</string>
-    <string name="title_section5">Panier</string>
+    <string name="title_section5">Commande</string>
     <string name="choix_base">Choisissez la base de votre pizza :</string>
     <string name="base_creme">Crème fraîche</string>
     <string name="base_tomate">Sauce tomate</string>
@@ -37,9 +37,9 @@
     <string name="ingredient8">Olives</string>
     <string name="ingredient9">Poivrons</string>
     <string name="ingredient10">Oignons</string>
-    <string name="button_eau">Demande Eau</string>
-    <string name="button_pain">Demande Pain</string>
-    <string name="button_serveur">Appel Serveur</string>
+    <string name="button_eau">Demander de l\'eau</string>
+    <string name="button_pain">Demander du pain</string>
+    <string name="button_serveur">Appeler le serveur</string>
     <string name="button_toilettes">Toilettes</string>
     <string name="eau_message">Quantité:</string>
     <string name="merci_message">Merci !</string>
@@ -59,7 +59,7 @@
     <string name="counter_value">1000000</string>
     <string name="image_chron">Chronometer</string>
     <string name="votre_commande_message">Commande enregistrée!</string>
-    <string name="serveur_operation_message">Choisissez une operation...</string>
+    <string name="serveur_operation_message">De quoi avez-vous besoin ?</string>
     <string name="euro">€</string>
     <string name="list_boissons">Carte des boissons</string>
 

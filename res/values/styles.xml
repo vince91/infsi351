@@ -23,7 +23,66 @@
         <item name="android:actionBarTabBarStyle">@style/AppTheme.ActionBar.TabDivider</item>
         <item name="android:expandableListViewStyle">@style/MyExpandableListView</item>
         <item name="android:textColor">@color/beige</item>
+        <item name="android:alertDialogTheme">@style/MyAlertDialogTheme</item>
+	    <item name="android:alertDialogStyle">@style/MyAlertDialogStyle</item>
     </style>
+	
+	<style name="MyBorderlessButton">
+	    <!-- Set background drawable and text size of the buttons here -->
+	    <item name="android:background">@drawable/button_window</item>
+	    <item name="android:textSize">20sp</item>
+	    <item name="android:textColor">@color/beige</item>
+	</style>
+	
+	<style name="MyButtonBar">
+	    <!-- Define a background for the button bar and a divider between the buttons here -->
+	    <item name="android:divider">@color/tab_highlight</item>
+	    <item name="android:dividerPadding">15dip</item>
+	    <item name="android:showDividers">middle</item>
+	    <item name="android:background">@color/tab_highlight</item>
+	</style>
+	
+	<style name="MyAlertDialogTitle">
+	    <item name="android:maxLines">1</item>
+	    <item name="android:scrollHorizontally">true</item>
+	    <item name="android:textAppearance">@style/MyAlertTitleAppearance</item>
+	</style>
+	
+	<style name="MyAlertTitleAppearance">
+	    <item name="android:textSize">22sp</item>
+	    <item name="android:textColor">@color/tab_highlight</item>
+	</style>
+	
+	<style name="MyAlertTextAppearance">
+	    <item name="android:textSize">20sp</item>
+	    <item name="android:textColor">@color/background</item>
+	</style>
+	
+	<style name="MyAlertDialogTheme">
+	    <item name="android:windowBackground">@android:color/transparent</item>
+	    <item name="android:windowTitleStyle">@style/MyAlertDialogTitle</item>
+	    <item name="android:windowContentOverlay">@null</item>
+	    <item name="android:windowMinWidthMajor">@android:dimen/dialog_min_width_major</item>
+	    <item name="android:windowMinWidthMinor">@android:dimen/dialog_min_width_minor</item>
+	    <item name="android:windowIsFloating">true</item>
+	    <item name="android:textAppearanceMedium">@style/MyAlertTextAppearance</item>
+	    <item name="android:buttonBarStyle">@style/MyButtonBar</item>
+	    <item name="android:buttonBarButtonStyle">@style/MyBorderlessButton</item>
+	</style>
+	
+	<style name="MyAlertDialogStyle">
+	    <!-- Define background colors of title, message, buttons, etc. here -->
+	    <item name="android:fullDark">@color/beige</item>
+	    <item name="android:topDark">@color/beige</item>
+	    <item name="android:centerDark">@color/beige</item>
+	    <item name="android:bottomDark">@color/beige</item>
+	    <item name="android:fullBright">@color/background</item>
+	    <item name="android:topBright">@color/background</item>
+	    <item name="android:centerBright">@color/background</item>
+	    <item name="android:bottomBright">@color/background</item>
+	    <item name="android:bottomMedium">@color/transparent</item>
+	    <item name="android:centerMedium">@color/transparent</item>
+	</style>
     
     <style name="AppTheme.ActionBar.TabDivider" parent="@style/android:Widget.ActionBar.TabBar">
         <item name="android:divider">@color/background</item>
@@ -112,12 +171,11 @@
     <style name="button_text" >
         <item name="android:layout_width" >150dp</item>
    		<item name="android:layout_height" >150dp</item>
-	   	<item name="android:textColor" >#C60751</item>
+	   	<item name="android:textColor" >@color/beige</item>
 	   	<item name="android:layout_margin" >30dp</item>
     	<item name="android:textSize" >20sp</item>
     	<item name="android:textStyle" >bold</item>
-    	<item name="android:alpha" >0.7</item>
-    	<item name="android:background" >#A6A93C</item>
+    	<item name="android:background" >@color/green</item>
     	<item name="android:padding" >10dp</item>
   	</style>
   
