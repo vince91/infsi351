@@ -1,9 +1,11 @@
 package infsi351.Restauration;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
@@ -50,8 +52,12 @@ public class MyExpandableListAdapter extends BaseExpandableListAdapter {
       public void onClick(View v) {
 //        Toast.makeText(activity, children.getNom(),
 //            Toast.LENGTH_SHORT).show();
-    	  activity.commande.add_boisson(children);
-    	  ((TextView)(v.findViewById(R.id.textView2))).append("    Ajouté !");
+    	  	activity.commande.add_boisson(children);
+			AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+			builder.setMessage(activity.getResources().getString(R.string.boisson_commandee) + " " + children.getNom());
+			AlertDialog dialog = builder.create();
+			dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+			dialog.show();
 
       }
     });

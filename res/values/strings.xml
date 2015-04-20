@@ -79,6 +79,7 @@
     <string name="map_to_toilets">Voici le plan menant aux toilettes.</string>
     <string name="empty_commande">Votre commande est vide !</string>
     <string name="make_da_pizza">Composez votre pizza !</string>
+    <string name="boisson_commandee">Vous avez bien commandé un </string>
 
 
 </resources>
