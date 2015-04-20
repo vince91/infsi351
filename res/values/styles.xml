@@ -85,7 +85,7 @@
 	</style>
     
     <style name="AppTheme.ActionBar.TabDivider" parent="@style/android:Widget.ActionBar.TabBar">
-        <item name="android:divider">@color/background</item>
+        <item name="android:divider">@color/tab_highlight</item>
         <item name="android:showDividers">middle</item>
     	<item name="android:dividerPadding">15dip</item>
     </style>
@@ -138,7 +138,7 @@
         <item name="android:layout_width" >wrap_content</item>
     	<item name="android:layout_height" >wrap_content</item>
     	<item name="android:gravity" >center</item>
-    	<item name="android:layout_margin" >3dp</item>
+<!--     	<item name="android:layout_margin" >3dp</item> -->
     	<item name="android:textSize" >20sp</item>
         <item name="android:background">@drawable/button2</item>
     </style>

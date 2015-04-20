@@ -26,14 +26,17 @@
         android:id="@+id/cart_price_item"
         android:layout_width="wrap_content"
         android:layout_height="fill_parent"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
         android:gravity="center"
         android:text="@string/price_item"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
         style="@style/button2"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="3dp"
+        android:layout_marginTop="3dp"
         android:id="@+id/button_modify_item"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -41,6 +44,9 @@
     
     <Button
         style="@style/button2"
+        android:layout_marginStart="9dp"
+        android:layout_marginBottom="3dp"
+        android:layout_marginTop="3dp"
         android:id="@+id/button_delete_item"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

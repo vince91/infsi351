@@ -19,13 +19,16 @@
         android:layout_width="wrap_content"
         android:layout_height="fill_parent"
         android:gravity="center"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
         android:text="@string/price_item"
         android:textAppearance="?android:attr/textAppearanceLarge" />
     
     <Button
         style="@style/button2"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="3dp"
+        android:layout_marginTop="3dp"
         android:id="@+id/button_delete_item"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

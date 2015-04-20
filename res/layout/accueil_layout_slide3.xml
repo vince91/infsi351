@@ -1,24 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/content"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/slide3" >
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/slide3"
+    android:fillViewport="true" >
 
-<!--     <LinearLayout -->
-<!--         android:layout_width="match_parent" -->
-<!--         android:layout_height="match_parent" -->
-<!--         android:orientation="vertical" -->
-<!--         android:onClick="switch_tab_to_boisson" > -->
+	<LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:onClick="switch_tab_to_boisson" >
 
-<!--         <TextView -->
-<!--             android:id="@+id/boisson_message" -->
-<!--             android:layout_width="match_parent" -->
-<!--             android:layout_height="match_parent" -->
-<!--             android:layout_gravity="center" -->
-<!--             android:hint="@string/boisson_message" /> -->
-
-
-<!--     </LinearLayout> -->
+    </LinearLayout>
 
 </ScrollView>
