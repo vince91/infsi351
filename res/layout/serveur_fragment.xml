@@ -33,7 +33,7 @@
         	android:layout_weight="1"
         	android:text="@string/button_eau"
 			android:drawableTop="@drawable/soda_bottle"  
-			style="@style/button_text" /> 
+			style="@style/button2" /> 
 	
 		<Button 
         	android:id="@+id/button_pain"
@@ -41,7 +41,7 @@
         	android:layout_weight="1"
        		android:text="@string/button_pain"
         	android:drawableTop="@drawable/bread" 
-        	style="@style/button_text"/>
+        	style="@style/button2"/>
 	
         <Button 
         	android:id="@+id/button_serveur" 
@@ -49,7 +49,7 @@
         	android:layout_weight="1"
         	android:text="@string/button_serveur"
         	android:drawableTop="@drawable/waiter"
-        	style="@style/button_text"/>
+        	style="@style/button2"/>
         
         <Button 
         	android:id="@+id/button_toilettes"
@@ -57,7 +57,7 @@
         	android:layout_weight="1"
         	android:text="@string/button_toilettes"
         	android:drawableTop="@drawable/hot_tube"
-        	style="@style/button_text"/>
+        	style="@style/button2"/>
         </LinearLayout>
         
      

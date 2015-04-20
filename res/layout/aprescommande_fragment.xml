@@ -66,7 +66,7 @@
         	android:layout_weight="1"
         	android:text="@string/button_camera"
         	android:drawableTop="@drawable/screenshot"
-        	style="@style/button_text"/> 
+        	style="@style/button2"/> 
         	
 	    <Button
        		android:id="@+id/button_addition"
@@ -74,7 +74,7 @@
         	android:layout_weight="1"
         	android:text="@string/button_addition" 
         	android:drawableTop="@drawable/card_in_use"
-        	style="@style/button_text"/>
+        	style="@style/button2"/>
 	    
     </LinearLayout>
     

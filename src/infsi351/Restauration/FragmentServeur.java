@@ -78,7 +78,6 @@ public class FragmentServeur extends Fragment {
             	builder.setMessage("Voulez-vous du pain?").setTitle("Pain");
             	builder.setPositiveButton("Oui, svp!", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                    	
                     	AlertDialog.Builder builder_confirm = new AlertDialog.Builder(getActivity());
                     	if(numPain < MAX_PAIN){
                     		numPain++;
@@ -119,16 +118,16 @@ public class FragmentServeur extends Fragment {
             }
         });
         
-      //BUTTON toilettes
+        //BUTTON toilettes
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+    	builder.setMessage("Voilˆ le plan pour arriver ˆ les toilettes:").setTitle("Carte toilettes");
+    	builder.setView(view_toilettes);
+    	final AlertDialog dialog = builder.create();
+        
         final Button button_toilette = (Button) view.findViewById(R.id.button_toilettes);
         button_toilette.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View v) {
-        		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-            	builder.setMessage("Voilˆ le plan pour arriver ˆ les toilettes:").setTitle("Carte toilettes");
-            	builder.setView(view_toilettes);
-         // Create the AlertDialog
-         		AlertDialog dialog = builder.create();
-         		dialog.show();
+        		dialog.show();
             }
         });
         
