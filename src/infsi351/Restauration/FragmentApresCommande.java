@@ -6,14 +6,13 @@ import android.app.ActionBar.LayoutParams;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
-import android.graphics.PixelFormat;
+import android.content.res.Resources;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnPreparedListener;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -62,7 +61,7 @@ public class FragmentApresCommande extends Fragment {
 		     public void onFinish() {
 		    	 prete=true;
 		    	 final TextView counter_view = (TextView) view.findViewById(R.id.counter_value);
-		    	 counter_view.setText("Votre commande est en tran d'arriver ˆ la table!");
+		    	 counter_view.setText(getResources().getString(R.string.commande_is_coming));
 		    	 
 		     }
 		};
@@ -77,8 +76,9 @@ public class FragmentApresCommande extends Fragment {
         			mainActivity.voir_addition(view);
         		}else{
         			AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                	builder.setMessage("Voulez attendre votre commande avant de demander l'addition").setTitle("Attendez commande");
+                	builder.setMessage(getResources().getString(R.string.wait_before_bill));
              		AlertDialog dialog = builder.create();
+             		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
              		dialog.show();
         		}
         		

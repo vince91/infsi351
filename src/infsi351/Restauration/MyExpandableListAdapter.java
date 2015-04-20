@@ -44,7 +44,7 @@ public class MyExpandableListAdapter extends BaseExpandableListAdapter {
     text = (TextView) convertView.findViewById(R.id.textView1);
     text.setText(children.getNom());
     text = (TextView) convertView.findViewById(R.id.textView2);
-    text.setText(children.getPrix() + "€");
+    text.setText(children.getPrix() + activity.getResources().getString(R.string.euro));
     convertView.setOnClickListener(new OnClickListener() {
       @Override
       public void onClick(View v) {

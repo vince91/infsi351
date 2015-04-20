@@ -62,6 +62,23 @@
     <string name="serveur_operation_message">De quoi avez-vous besoin ?</string>
     <string name="euro">€</string>
     <string name="list_boissons">Carte des boissons</string>
+    <string name="no_drinks">Vous n\'avez pas commandé de boisson</string>
+    <string name="no_pizza">Vous n\'avez pas commandé de pizza</string>
+    <string name="commande_is_coming">Votre commande est en train d\'arriver.</string>
+    <string name="wait_before_bill">Veuillez attendre votre commande avant de demander l\'addition !</string>
+    <string name="water_is_coming">Une carafe d\'eau arrivera bientôt !</string>
+    <string name="too_much_water">Vous avez commandé trop d\'eau !</string>
+    <string name="want_some_water">Désirez-vous une carafe d\'eau ?</string>
+    <string name="yes_i_do">Oui, s\'il vous plait !</string>
+    <string name="no_i_dont">Non merci !</string>
+    <string name="want_some_bread">Voulez-vous du pain ?</string>
+    <string name="bread_is_coming">Une corbeille de pain arrivera bientôt !</string>
+    <string name="too_muc_bread">Vous avez commandé trop de pain !</string>
+    <string name="garcon_is_coming">Un serveur arrivera bientôt à votre table</string>
+    <string name="garcon_is_still_coming">Un serveur est en train d\'arriver à votre table. Veuillez nous excuser pour l\'attente.</string>
+    <string name="map_to_toilets">Voici le plan menant aux toilettes.</string>
+    <string name="empty_commande">Votre commande est vide !</string>
+    <string name="make_da_pizza">Composez votre pizza !</string>
 
 
 </resources>

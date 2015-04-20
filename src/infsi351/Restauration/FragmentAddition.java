@@ -53,7 +53,7 @@ public class FragmentAddition extends Fragment {
 		}
 		else {
 			View item_drink = inflater.inflate(R.layout.empty_cart, (ViewGroup) content_drinks, false);
-			((TextView)item_drink.findViewById(R.id.cart_empty_item)).setText("Pas de boisson ? :(");
+			((TextView)item_drink.findViewById(R.id.cart_empty_item)).setText(getResources().getString(R.string.no_drinks));
 			((LinearLayout)content_drinks).addView(item_drink);
 		}
 		if(pizza_list.size() > 0){
@@ -75,7 +75,7 @@ public class FragmentAddition extends Fragment {
 		}
 		else {
 			View item_cart = inflater.inflate(R.layout.empty_cart, (ViewGroup) content_cart, false);
-			((TextView)item_cart.findViewById(R.id.cart_empty_item)).setText("Pas de pizza ? :(");
+			((TextView)item_cart.findViewById(R.id.cart_empty_item)).setText(getResources().getString(R.string.no_pizza));
 			((LinearLayout)content_cart).addView(item_cart);
 		}
 		

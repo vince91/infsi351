@@ -4,12 +4,14 @@ package infsi351.Restauration;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.app.AlertDialog;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -72,7 +74,7 @@ public class FragmentPanier extends Fragment {
 		}
 		else {
 			View item_drink = inflater.inflate(R.layout.empty_cart, (ViewGroup) content_drinks, false);
-			((TextView)item_drink.findViewById(R.id.cart_empty_item)).setText("Pas de boisson ? :(");
+			((TextView)item_drink.findViewById(R.id.cart_empty_item)).setText(getResources().getString(R.string.no_drinks));
 			((LinearLayout)content_drinks).addView(item_drink);
 		}
 		if(pizza_list.size() > 0){
@@ -121,11 +123,27 @@ public class FragmentPanier extends Fragment {
 		}
 		else {
 			View item_cart = inflater.inflate(R.layout.empty_cart, (ViewGroup) content_cart, false);
-			((TextView)item_cart.findViewById(R.id.cart_empty_item)).setText("Pas de pizza ? :(");
+			((TextView)item_cart.findViewById(R.id.cart_empty_item)).setText(getResources().getString(R.string.no_pizza));
 			((LinearLayout)content_cart).addView(item_cart);
 		}
 		
 		((TextView)view.findViewById(R.id.total_cart)).setText(total + " " + euro);
+		
+		Button button_validate = (Button)view.findViewById(R.id.button_confirm_order);
+		button_validate.setOnClickListener(new View.OnClickListener() {
+        	public void onClick(View v) {
+        		MainActivity main = (MainActivity)getActivity();
+            	if(main.commande.get_liste_boissons_size()==0 && main.commande.get_liste_pizzas_size()==0){
+            		AlertDialog.Builder builder = new AlertDialog.Builder(main);
+            		builder.setMessage(getResources().getString(R.string.empty_commande));
+            		AlertDialog dialog = builder.create();
+             		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+             		dialog.show();
+            	}else{
+            		main.valider_la_commande(v);
+                }
+            }
+        });
 		
 		return view;
 		

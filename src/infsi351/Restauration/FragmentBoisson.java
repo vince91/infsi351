@@ -1,20 +1,12 @@
 package infsi351.Restauration;
 
-import java.util.ArrayList;
-
-import android.app.ListFragment;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.widget.SimpleCursorAdapter;
 import android.util.SparseArray;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ExpandableListView;
-import android.widget.ListView;
-import android.widget.TextView;
 
 public class FragmentBoisson extends Fragment {
 	/**
