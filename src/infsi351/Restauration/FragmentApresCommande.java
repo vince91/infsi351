@@ -34,10 +34,13 @@ public class FragmentApresCommande extends Fragment {
 	private int position = 0;
 	private ProgressDialog progressDialog;
 	private MediaController mediaControls;
-
+	
+	
 	
 	public FragmentApresCommande() {
 		prete=false;
+		
+		
 	}
 
 	@Override
@@ -48,9 +51,14 @@ public class FragmentApresCommande extends Fragment {
 		final View view = inflater.inflate(R.layout.aprescommande_fragment, container, false);
 		final MainActivity mainActivity = (MainActivity) getActivity();
 		
+		
+		
+		
+		
 		//COUNTER
 		CountDownTimer counter = new CountDownTimer(30*1*1000, 1000){
 			public void onTick(long millisUntilFinished) {
+
 		    	 final TextView counter_view = (TextView) view.findViewById(R.id.counter_value);
 		    	 String v = String.format("%02d", millisUntilFinished/60000);
                  int va = (int)( (millisUntilFinished%60000)/1000);

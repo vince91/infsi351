@@ -40,6 +40,7 @@
         	android:layout_height="match_parent"
   			android:orientation="vertical" 
   			android:layout_gravity="center"
+  			android:layout_centerHorizontal="true"
   			android:layout_weight="1"
   			android:layout_marginLeft="10dp"
         	android:layout_marginRight="10dp">
@@ -74,7 +75,7 @@
         	android:layout_weight="1"
         	android:text="@string/button_camera"
         	android:drawableTop="@drawable/screenshot"
-        	style="@style/button2"/> 
+        	style="@style/button4"/> 
         	
 	    <Button
        		android:id="@+id/button_addition"
@@ -82,7 +83,7 @@
         	android:layout_weight="1"
         	android:text="@string/button_addition" 
         	android:drawableTop="@drawable/card_in_use"
-        	style="@style/button2"/>
+        	style="@style/button4"/>
 	    
     </LinearLayout>
     
